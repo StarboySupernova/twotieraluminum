@@ -5,9 +5,9 @@ import LogoStyles from '../styles/LogoStyles';
 function Logo() {
   return (
     <LogoStyles to="/">
-      <StaticImage 
-        src="../images/midrandrubblelogo.jpeg" 
-        alt="Midrand Rubble Logo"
+      <StaticImage
+        src="../images/twotierlogo.jpg"
+        alt="Two Tier Aluminium Hub Logo"
         placeholder="blurred"
         width={60}
         height={60}
@@ -16,5 +16,4 @@ function Logo() {
     </LogoStyles>
   );
 }
-
 export default Logo;
