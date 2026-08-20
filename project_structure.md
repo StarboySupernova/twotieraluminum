@@ -1,12 +1,12 @@
 # Project Overview
 
 ## Project Summary
-- Total Files (tracked): 124
+- Total Files (tracked): 125
 
 ### Language Breakdown
-- JavaScript: 98 files (79.0%)
-- JSON: 12 files (9.7%)
-- Image: 11 files (8.9%)
+- JavaScript: 98 files (78.4%)
+- Image: 12 files (9.6%)
+- JSON: 12 files (9.6%)
 - Markdown: 2 files (1.6%)
 - SVG: 1 files (0.8%)
 
@@ -108,7 +108,8 @@
 │   │   │   ├── 🖼️ midrandrubble - Copy.jpeg
 │   │   │   ├── 🖼️ midrandrubble.ico.jpeg
 │   │   │   ├── 🖼️ midrandrubble.jpeg
-│   │   │   └── 🖼️ midrandrubblelogo.jpeg
+│   │   │   ├── 🖼️ midrandrubblelogo.jpeg
+│   │   │   └── 🖼️ twotierlogo.jpg
 │   │   ├── 📑 pages
 │   │   │   ├── 🟨 404.js
 │   │   │   └── 🟨 index.js
@@ -180,6 +181,7 @@
 ├── 📄 .gitignore
 ├── 🖼️ banner.png
 ├── 🟨 generate_structure.js
+├── 📄 LICENSE
 ├── 🔧 package-lock.json
 ├── 🔧 package.json
 ├── 📝 README.md
@@ -200,6 +202,64 @@ module.exports = {
     'react/jsx-pascal-case': 'error',
   },
 };
+
+```
+## `README.md`
+```
+![Midrand Rubble Removal & Site Clearing](./midrandrubble.jpeg)
+
+# Official web platform showcasing Tier-1 logistics, plant hire, and integrated facility management solutions. By Christian Simbarashe Dombodzvuku
+
+A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
+
+# Midrand Rubble Removal & Site Clearing (Pty) Ltd
+Official B2B Platform for Level 1 B-BBEE Heavy Logistics and Facility Management.
+
+## Corporate Identity
+- **Registration:** 2026/040477/07
+- **Location:** Midrand, South Africa
+- **CSD:** MAAA1687050
+
+<a href="https://www.buymeacoffee.com/" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 162.75px !important;" ></a>
+
+---
+
+## Project Details
+
+`Gatsby.js` was used for the frontend and `Sanity.io` for the headless CMS, with `graphql` used to source content
+
+- [React.js](https://reactjs.org/)
+- [Gatsby.js](https://www.gatsbyjs.org/)
+  - [Gatsby-plugin-image](https://www.gatsbyjs.org/packages/gatsby-plugin-image/)
+    - Static Image & Gatsby Image
+  - Gatsby Page
+    - Normal Pages
+    - programmatically created pages
+  - Gatsby Pagination
+  - [Gatsby-plugin-local-search](https://www.gatsbyjs.org/packages/gatsby-plugin-local-search/)
+  - [GraphQL](https://graphql.org/)
+    - Static Query & Page Query
+- [Sanity.io](https://sanity.io/)
+  - Sanity Schema
+  - Custom Blocks
+    - Custom Rich-text Block
+    - Custom Code Block
+  - Studio Customization
+- [React-PortableText](https://github.com/portabletext/react-portabletext)
+- [Axios](https://www.npmjs.com/package/axios)
+
+## Tools Used
+
+- UI Design: Figma
+- Code Editor: VS Code
+
+## License
+
+[MIT][mit]
+
+✨🚀
+
+[mit]: https://choosealicense.com/licenses/mit/
 
 ```
 ## `banner.png`
@@ -6938,72 +6998,14 @@ function printTree(dir, prefix = "", stream) {
 }
 
 ```
-## `README.md`
-```
-![Midrand Rubble Removal & Site Clearing](./midrandrubble.jpeg)
-
-# Official web platform showcasing Tier-1 logistics, plant hire, and integrated facility management solutions. By Christian Simbarashe Dombodzvuku
-
-A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
-
-# Midrand Rubble Removal & Site Clearing (Pty) Ltd
-Official B2B Platform for Level 1 B-BBEE Heavy Logistics and Facility Management.
-
-## Corporate Identity
-- **Registration:** 2026/040477/07
-- **Location:** Midrand, South Africa
-- **CSD:** MAAA1687050
-
-<a href="https://www.buymeacoffee.com/" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Coffee" style="height: 45px !important;width: 162.75px !important;" ></a>
-
----
-
-## Project Details
-
-`Gatsby.js` was used for the frontend and `Sanity.io` for the headless CMS, with `graphql` used to source content
-
-- [React.js](https://reactjs.org/)
-- [Gatsby.js](https://www.gatsbyjs.org/)
-  - [Gatsby-plugin-image](https://www.gatsbyjs.org/packages/gatsby-plugin-image/)
-    - Static Image & Gatsby Image
-  - Gatsby Page
-    - Normal Pages
-    - programmatically created pages
-  - Gatsby Pagination
-  - [Gatsby-plugin-local-search](https://www.gatsbyjs.org/packages/gatsby-plugin-local-search/)
-  - [GraphQL](https://graphql.org/)
-    - Static Query & Page Query
-- [Sanity.io](https://sanity.io/)
-  - Sanity Schema
-  - Custom Blocks
-    - Custom Rich-text Block
-    - Custom Code Block
-  - Studio Customization
-- [React-PortableText](https://github.com/portabletext/react-portabletext)
-- [Axios](https://www.npmjs.com/package/axios)
-
-## Tools Used
-
-- UI Design: Figma
-- Code Editor: VS Code
-
-## License
-
-[MIT][mit]
-
-✨🚀
-
-[mit]: https://choosealicense.com/licenses/mit/
-
-```
-## `studio\components\SidebarList.js`
+## `studio/components/SidebarList.js`
 ```
 import S from "@sanity/desk-tool/structure-builder";
 import { MdStar } from "react-icons/md";
 
 function SidebarList() {
   return S.list()
-    .title("Midrand Rubble Removal & Site Clearing")
+    .title("Two Tier Aluminium Hub")
     .items([
       S.listItem()
         .title("Spotlight")
@@ -7019,14 +7021,14 @@ function SidebarList() {
 export default SidebarList;
 
 ```
-## `studio\config\@sanity\data-aspects.json`
+## `studio/config/@sanity/data-aspects.json`
 ```
 {
   "listOptions": {}
 }
 
 ```
-## `studio\config\@sanity\default-layout.json`
+## `studio/config/@sanity/default-layout.json`
 ```
 {
   "toolSwitcher": {
@@ -7036,7 +7038,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\config\@sanity\default-login.json`
+## `studio/config/@sanity/default-login.json`
 ```
 {
   "providers": {
@@ -7047,7 +7049,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\config\@sanity\form-builder.json`
+## `studio/config/@sanity/form-builder.json`
 ```
 {
   "images": {
@@ -7056,7 +7058,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\package-lock.json`
+## `studio/package-lock.json`
 ```
 {
   "name": "react-js-fullstack-web-app",
@@ -40209,7 +40211,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\package.json`
+## `studio/package.json`
 ```
 {
   "name": "react-js-fullstack-web-app",
@@ -40250,7 +40252,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\sanity.json`
+## `studio/sanity.json`
 ```
 {
   "root": true,
@@ -40259,7 +40261,7 @@ export default SidebarList;
     "dataset": "production"
   },
   "project": {
-    "name": "MidrandRubble"
+    "name": "Two Tier Aluminium Hub"
   },
   "plugins": [
     "@sanity/base",
@@ -40288,7 +40290,7 @@ export default SidebarList;
 }
 
 ```
-## `studio\schemas\documents\author.js`
+## `studio/schemas/documents/author.js`
 ```
 import { FcBusinessman } from 'react-icons/fc';
 
@@ -40340,7 +40342,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\blog.js`
+## `studio/schemas/documents/blog.js`
 ```
 import { format } from 'date-fns';
 import { GiNotebook } from 'react-icons/gi';
@@ -40425,7 +40427,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\category.js`
+## `studio/schemas/documents/category.js`
 ```
 import { MdCategory } from 'react-icons/md';
 
@@ -40477,7 +40479,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\objective.js`
+## `studio/schemas/documents/objective.js`
 ```
 import { FcComboChart } from 'react-icons/fc';
 
@@ -40512,7 +40514,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\service.js`
+## `studio/schemas/documents/service.js`
 ```
 import { FcServices } from 'react-icons/fc';
 
@@ -40550,7 +40552,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\spotlight.js`
+## `studio/schemas/documents/spotlight.js`
 ```
 import { FcRating } from "react-icons/fc";
 
@@ -40599,7 +40601,7 @@ export default {
 };
 
 ```
-## `studio\schemas\documents\value.js`
+## `studio/schemas/documents/value.js`
 ```
 import { FcIdea } from 'react-icons/fc';
 
@@ -40634,7 +40636,7 @@ export default {
 };
 
 ```
-## `studio\schemas\objects\customImage.js`
+## `studio/schemas/objects/customImage.js`
 ```
 import React from 'react';
 import { MdImage } from 'react-icons/md';
@@ -40675,7 +40677,7 @@ export default {
 };
 
 ```
-## `studio\schemas\objects\normalText.js`
+## `studio/schemas/objects/normalText.js`
 ```
 export default {
   title: 'Normal Text',
@@ -40700,7 +40702,7 @@ export default {
 };
 
 ```
-## `studio\schemas\objects\richText.js`
+## `studio/schemas/objects/richText.js`
 ```
 export default {
   title: 'Rich Text',
@@ -40752,7 +40754,7 @@ export default {
 };
 
 ```
-## `studio\schemas\schema.js`
+## `studio/schemas/schema.js`
 ```
 /* eslint-disable */
 import createSchema from "part:@sanity/base/schema-creator";
@@ -40793,7 +40795,7 @@ export default createSchema({
 });
 
 ```
-## `studio\tsconfig.json`
+## `studio/tsconfig.json`
 ```
 {
   // Note: This config is only used to help editors like VS Code understand/resolve
@@ -40803,14 +40805,31 @@ export default createSchema({
 }
 
 ```
-## `web\.eslintrc.js`
+## `web/.eslintrc.js`
 ```
 module.exports = {
   rules: {},
 };
 
 ```
-## `web\gatsby-browser.js`
+## `web/README.md`
+```
+# Diginotive Solutions (Pvt) Ltd
+
+A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
+Built to showcase Diginotive's R&D capabilities, AI publications, and digital transformation services.
+
+## Project Details
+`Gatsby.js` was used for the frontend and `Sanity.io` for the headless CMS, with `graphql` used to source content.
+
+- [React.js](https://reactjs.org/)
+- [Gatsby.js](https://www.gatsbyjs.org/)
+- [Sanity.io](https://sanity.io/)
+
+## License
+[MIT][mit]
+```
+## `web/gatsby-browser.js`
 ```
 // fonts
 import '@fontsource/poppins/500.css';
@@ -40826,16 +40845,16 @@ export const wrapPageElement = ({ element, props }) => (
 );
 
 ```
-## `web\gatsby-config.js`
+## `web/gatsby-config.js`
 ```
 require("dotenv").config("./.env");
 const sanityConfig = require("./sanity-config.js");
 
 module.exports = {
   siteMetadata: {
-    title: `Midrand Rubble Removal & Site Clearing`,
-    siteUrl: `https://midrandrubble.netlify.app`, // Update when custom domain is linked
-    description: `Fast, affordable, same-day rubble removal, site clearing, and construction debris transport in Midrand, Centurion, Sandton, and Fourways.`,
+    title: `Two Tier Aluminium Hub`,
+    siteUrl: `https://twotieraluminium.netlify.app`, // Update when you have your new URL
+    description: `Quality Hardware. Endless Solutions. Supplying premium aluminium profiles, hardware, tools, and accessories.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -41048,7 +41067,7 @@ module.exports = {
 };
 
 ```
-## `web\gatsby-node.js`
+## `web/gatsby-node.js`
 ```
 /* creating pages programmatically instead of creating them in files isnde the Pages folder */
 exports.createPages = async ({ graphql, actions }) => {
@@ -41247,7 +41266,7 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 
 ```
-## `web\gatsby-ssr.js`
+## `web/gatsby-ssr.js`
 ```
 import React from 'react';
 import Layout from './src/components/Layout';
@@ -41257,7 +41276,7 @@ export const wrapPageElement = ({ element, props }) => (
 );
 
 ```
-## `web\package-lock.json`
+## `web/package-lock.json`
 ```
 {
   "name": "react-js-fullstack-web-app",
@@ -59636,7 +59655,7 @@ export const wrapPageElement = ({ element, props }) => (
 }
 
 ```
-## `web\package.json`
+## `web/package.json`
 ```
 {
   "name": "moorosi-holdings-corporate-portal",
@@ -59691,24 +59710,7 @@ export const wrapPageElement = ({ element, props }) => (
 }
 
 ```
-## `web\README.md`
-```
-# Diginotive Solutions (Pvt) Ltd
-
-A complete full-stack web-app created with `JAMstack`. ([Gatsby.js](https://www.gatsbyjs.org/) & [Sanity.io](https://sanity.io)).
-Built to showcase Diginotive's R&D capabilities, AI publications, and digital transformation services.
-
-## Project Details
-`Gatsby.js` was used for the frontend and `Sanity.io` for the headless CMS, with `graphql` used to source content.
-
-- [React.js](https://reactjs.org/)
-- [Gatsby.js](https://www.gatsbyjs.org/)
-- [Sanity.io](https://sanity.io/)
-
-## License
-[MIT][mit]
-```
-## `web\sanity-config.js`
+## `web/sanity-config.js`
 ```
 module.exports = {
   projectId: process.env.GATSBY_SANITY_PROJECT_ID,
@@ -59716,430 +59718,7 @@ module.exports = {
 };
 
 ```
-## `web\src\components\author\AuthorGrid.js`
-```
-import React from 'react';
-import { AuthorGridStyles } from '../../styles/author/AuthorGridStyles';
-import AuthorItem from './AuthorItem';
-
-function AuthorGrid({ authors }) {
-  return (
-    <AuthorGridStyles>
-      {authors.map((item) => (
-        <AuthorItem
-          key={item.id}
-          name={item.name}
-          slug={item.slug}
-          profileImage={item.profileImage}
-        />
-      ))}
-    </AuthorGridStyles>
-  );
-}
-
-export default AuthorGrid;
-
-```
-## `web\src\components\author\AuthorItem.js`
-```
-import React from "react";
-import { GatsbyImage } from "gatsby-plugin-image";
-import { AuthorItemStyles } from "../../styles/author/AuthorItemStyles";
-import { Title } from "../typography/Title";
-
-function AuthorItem({ name, slug, profileImage }) {
-  return (
-    <AuthorItemStyles className="author-item" to={`/team/${slug.current}`}>
-      {profileImage && (
-        <GatsbyImage
-          image={profileImage.asset.gatsbyImageData}
-          alt={profileImage.alt || name}
-          className="profileImage"
-        />
-      )}
-      <Title>{name}</Title>
-    </AuthorItemStyles>
-  );
-}
-
-export default AuthorItem;
-
-```
-## `web\src\components\blog\BlogGrid.js`
-```
-import React from 'react';
-import { BlogGridStyles } from '../../styles/blog/BlogGridStyles';
-import BlogItem from './BlogItem';
-
-function BlogGrid({ blogs, prefix = "spotlight" }) {
-  return (
-    <BlogGridStyles>
-      {blogs &&
-        blogs.map((blog) => (
-          <BlogItem
-            key={blog.id}
-            path={blog.slug.current}
-            title={blog.title}
-            categories={blog.categories}
-            image={{
-              imageData: blog.coverImage?.asset?.gatsbyImageData,
-              altText: blog.coverImage?.alt,
-            }}
-            publishedAt={blog.publishedAt}
-            // Use the item's own prefix if it has one, otherwise fallback to the grid default
-            prefix={blog.prefix || prefix} 
-          />
-        ))}
-    </BlogGridStyles>
-  );
-}
-
-export default BlogGrid;
-```
-## `web\src\components\blog\BlogItem.js`
-```
-import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { format } from 'date-fns';
-import React from 'react';
-import { BlogItemStyles } from '../../styles/blog/BlogItemStyles';
-import ParagraphText from '../typography/ParagraphText';
-import { Title } from '../typography/Title';
-import { FiCalendar } from 'react-icons/fi';
-import { BiCategory } from 'react-icons/bi';
-import { FaChevronRight } from 'react-icons/fa'; // Added icon for the pill button
-
-function BlogItem({ path, title, image, categories =[], publishedAt, prefix }) {
-  return (
-    <BlogItemStyles>
-      {/* 1. Card Image */}
-      <Link to={`/${prefix}/${path}`} className="img-link">
-        {image?.imageData && (
-          <GatsbyImage
-            image={image.imageData}
-            alt={image.altText || title}
-            className="img"
-          />
-        )}
-      </Link>
-      
-      {/* 2. Card Title */}
-      <Link to={`/${prefix}/${path}`} className="title-link">
-        <Title className="title">{title}</Title>
-      </Link>
-      
-      {/* 3. Metadata (Date & Category) */}
-      <div className="meta-container">
-        {publishedAt && (
-          <ParagraphText className="publishedAt">
-            <FiCalendar />
-            {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}
-          </ParagraphText>
-        )}
-        {categories.length > 0 && (
-          <ParagraphText className="categoriesText">
-            <BiCategory />
-            <span>
-              {categories.map((item, index) => (
-                <span key={item.slug.current}>
-                  <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
-                  {index < categories.length - 1 ? ', ' : ''}
-                </span>
-              ))}
-            </span>
-          </ParagraphText>
-        )}
-      </div>
-
-      {/* 4. The SVG-Inspired Pill Button */}
-      <Link to={`/${prefix}/${path}`} className="action-pill-link">
-        <div className="action-pill">
-          <div className="icon-circle">
-            <FaChevronRight />
-          </div>
-          <span>View Project</span>
-        </div>
-      </Link>
-    </BlogItemStyles>
-  );
-}
-
-export default BlogItem;
-```
-## `web\src\components\buttons\ActionButton.js`
-```
-import React from 'react';
-import ActionButtonStyles from '../../styles/buttons/ActionButtonStyles';
-
-// remove rest here to see its effect and also why we need it, and the effect of 2 func params in react
-function ActionButton({ children, ...rest }) {
-  return (
-    <ActionButtonStyles
-      className="mobileMenuBtn"
-      role="button"
-      tabIndex={0}
-      {...rest}
-    >
-      {children}
-    </ActionButtonStyles>
-  );
-}
-
-export default ActionButton;
-
-```
-## `web\src\components\buttons\Button.js`
-```
-import React from 'react';
-import { buttonTypes } from '../../constants/buttonTypes';
-import { ButtonStyles } from '../../styles/buttons/ButtonStyles';
-
-function Button({ children, tag, variant = buttonTypes.primary, ...props }) {
-  return (
-    // tag allows us to render the component as either a tag we will specify. More explanation is needed // possibly because ButtonStyles is a styled components Link underneath??
-    <ButtonStyles as={tag} {...props} variant={variant}>
-      {children}
-    </ButtonStyles>
-  );
-}
-
-export default Button;
-
-```
-## `web\src\components\category\ActivityGrid.js`
-```
-import React from 'react';
-import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
-import ActivityItem from './ActivityItem';
-
-function ActivityGrid({ activities }) {
-  return (
-    <CategoryGridStyles>
-      {activities.map((item) => (
-        <ActivityItem
-          key={item.id}
-          title={item.title}
-          description={item._rawDescription}
-          slug={item.slug}
-        />
-      ))}
-    </CategoryGridStyles>
-  );
-}
-
-export default ActivityGrid;
-
-```
-## `web\src\components\category\ActivityItem.js`
-```
-import React from 'react';
-import Button from '../buttons/Button';
-import { buttonTypes } from '../../constants/buttonTypes';
-import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
-import { Title } from '../typography/Title';
-import ConstrainedPortableText from '../ConstrainedPortableText';
-
-function ActivityItem({ title, description, slug }) {
-  return (
-    <CategoryItemStyles className="activity-card">
-      <Title className="title">{title}</Title>
-      
-      {/* Wrapped the text so it behaves consistently */}
-      <div className="text-wrap-container">
-        <ConstrainedPortableText value={description} />
-      </div>
-      
-      {/* Wrapped the button so it gets pushed to the bottom and doesn't stretch */}
-      <div className="button-container">
-        <Button to={`/activities/${slug.current}`} variant={buttonTypes.outline}>
-          View Details
-        </Button>
-      </div>
-    </CategoryItemStyles>
-  );
-}
-
-export default ActivityItem;
-```
-## `web\src\components\category\CategoryGrid.js`
-```
-import React from 'react';
-import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
-import CategoryItem from './CategoryItem';
-
-function CategoryGrid({ categories }) {
-  return (
-    <CategoryGridStyles>
-      {categories.map((item) => (
-        <CategoryItem
-          key={item.id}
-          title={item.title}
-          description={item._rawDescription}
-          slug={item.slug}
-          coverImage={item.coverImage}
-        />
-      ))}
-    </CategoryGridStyles>
-  );
-}
-
-export default CategoryGrid;
-
-```
-## `web\src\components\category\CategoryItem.js`
-```
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import MyPortableText from '../MyPortableText';
-import Button from '../buttons/Button';
-import { buttonTypes } from '../../constants/buttonTypes';
-import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
-import { Title } from '../typography/Title';
-
-function CategoryItem({ title, description, slug, coverImage }) {
-  return (
-    <CategoryItemStyles className="category-card">
-      <Title className="title">{title}</Title>
-      
-      <div className="text-wrap-container">
-        {/* GRACEFUL HANDLING: Only renders if coverImage exists */}
-        {coverImage?.asset && (
-          <div className="card-image-wrapper">
-            <GatsbyImage
-              image={coverImage.asset.gatsbyImageData}
-              alt={coverImage.alt || title}
-              className="wrapped-img"
-              imgStyle={{ objectFit: 'fill' }} /* Forces the aspect ratio distortion */
-            />
-          </div>
-        )}
-        <MyPortableText value={description} />
-      </div>
-
-      <div className="button-container">
-        <Button to={`/categories/${slug.current}`} variant={buttonTypes.outline}>
-          Explore Services
-        </Button>
-      </div>
-    </CategoryItemStyles>
-  );
-}
-
-export default CategoryItem;
-```
-## `web\src\components\category\ObjectiveGrid.js`
-```
-import React from 'react';
-import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
-import ObjectiveItem from './ObjectiveItem';
-
-function ObjectiveGrid({ objectives }) {
-  return (
-    <CategoryGridStyles>
-      {objectives.map((item, index) => ( // Note the 'index' added here
-        <ObjectiveItem
-          key={item.id}
-          title={item.title}
-          description={item._rawDescription}
-          index={index} // Passing index to the child
-        />
-      ))}
-    </CategoryGridStyles>
-  );
-}
-
-export default ObjectiveGrid;
-```
-## `web\src\components\category\ObjectiveItem.js`
-```
-import React from 'react';
-import MyPortableText from '../MyPortableText';
-import { PremiumCardStyles } from '../../styles/category/PremiumCardStyles'; // NEW IMPORT
-import { Title } from '../typography/Title'; 
-import { FaRocket } from 'react-icons/fa'; // Icon for objectives
-
-function ObjectiveItem({ title, description, index }) { 
-  // We reverse the themes array so Objectives get different colors than Values
-  const themes =['theme-amethyst', 'theme-emerald', 'theme-amber', 'theme-ocean', 'theme-ruby'];
-  const currentTheme = themes[index % themes.length];
-
-  return (
-    <PremiumCardStyles className={currentTheme}> 
-      <div className="main-card">
-        <span className="card-tag">Strategic Objective</span>
-        
-        <div className="icon-badge">
-          <FaRocket />
-        </div>
-
-        <Title className="title">{title}</Title> 
-        <div className="text-wrap-container">
-          <MyPortableText value={description} />
-        </div>
-      </div>
-    </PremiumCardStyles>
-  );
-}
-
-export default ObjectiveItem;
-```
-## `web\src\components\category\ValueGrid.js`
-```
-import React from "react";
-import { ValueGridStyles } from "../../styles/category/CategoryGridStyles";
-import ValueItem from "./ValueItem";
-
-function ValueGrid({ DiginotiveValues }) {
-  return (
-    <ValueGridStyles>
-      {DiginotiveValues.map((item, index) => ( // Note the 'index' added here
-        <ValueItem
-          key={item.id}
-          title={item.title}
-          description={item._rawDescription}
-          index={index} // Passing index to the child
-        />
-      ))}
-    </ValueGridStyles>
-  );
-}
-
-export default ValueGrid;
-```
-## `web\src\components\category\ValueItem.js`
-```
-import React from 'react';
-import MyPortableText from '../MyPortableText';
-import { PremiumCardStyles } from '../../styles/category/PremiumCardStyles'; // NEW IMPORT
-import { Title } from '../typography/Title';
-import { FaGem } from 'react-icons/fa'; // Icon for values
-
-function ValueItem({ title, description, index }) {
-  // Rotate through 5 color themes based on the index
-  const themes =['theme-ruby', 'theme-ocean', 'theme-amber', 'theme-emerald', 'theme-amethyst'];
-  const currentTheme = themes[index % themes.length];
-
-  return (
-    <PremiumCardStyles className={currentTheme}> 
-      <div className="main-card">
-        <span className="card-tag">Core Value</span>
-        
-        <div className="icon-badge">
-          <FaGem />
-        </div>
-
-        <Title className="title">{title}</Title>
-        <div className="text-wrap-container">
-          <MyPortableText value={description} />
-        </div>
-      </div>
-    </PremiumCardStyles>
-  );
-}
-
-export default ValueItem;
-```
-## `web\src\components\ConstrainedPortableText.js`
+## `web/src/components/ConstrainedPortableText.js`
 ```
 import { PortableText } from '@portabletext/react';
 import React from 'react';
@@ -60257,7 +59836,7 @@ function ConstrainedPortableText({ value }) {
 export default ConstrainedPortableText;
 
 ```
-## `web\src\components\Footer.js`
+## `web/src/components/Footer.js`
 ```
 import { Link } from 'gatsby';
 import React from 'react';
@@ -60273,7 +59852,8 @@ function Footer() {
       <div className="container">
         <Logo />
         <ParagraphText className="footer__text">
-          Midrand Rubble Removal & Site Clearing is your trusted local partner for fast, efficient, and affordable debris management.
+          Two Tier Aluminium Hub is your trusted partner for high-quality
+          hardware and comprehensive aluminium solutions.
         </ParagraphText>
         <ul className="footer__menuList">
           {menu.map((item) => (
@@ -60292,12 +59872,17 @@ function Footer() {
           ))}
         </ul>
         <ParagraphText className="copyright">
-          <strong>Location:</strong> 355 Nancy Ndamase Street, Klipfontein View, Lethabong, Midrand, 1685<br/>
-          <strong>Operating Hours:</strong> Monday to Sunday (6 AM to 6 PM)<br/>
-          <strong>Contacts:</strong> Sbusiso: 081 078 6434 | Tshiamo: 083 651 2596
+          <strong>Location:</strong> 4148 11th Street Dzivarasekwa, Harare,
+          Zimbabwe, 00263
+          <br />
+          <strong>Operating Hours:</strong> Monday to Sunday (6 AM to 6 PM)
+          <br />
+          <strong>Contacts:</strong> Tariro: +263 71 987 5027 | Wendy: +263 77
+          829 6767
         </ParagraphText>
         <ParagraphText className="copyright">
-          © Midrand Rubble Removal & Site Clearing | {new Date().getFullYear()} | All rights reserved
+          © Two Tier Aluminium Hub | {new Date().getFullYear()} | All rights
+          reserved
         </ParagraphText>
       </div>
     </FooterStyles>
@@ -60307,7 +59892,7 @@ function Footer() {
 export default Footer;
 
 ```
-## `web\src\components\Header.js`
+## `web/src/components/Header.js`
 ```
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'gatsby';
@@ -60419,7 +60004,617 @@ function Header() {
 export default Header;
 
 ```
-## `web\src\components\homePage\FeaturedBlogs.js`
+## `web/src/components/Layout.js`
+```
+import React from 'react';
+import Header from './Header';
+import GlobalStyles from '../styles/GlobalStyles';
+import 'normalize.css/normalize.css';
+import Footer from './Footer';
+import Search from './search/SearchModal';
+import { SearchModalContextProvider } from '../contexts/searchModalContext';
+
+function Layout({ children }) {
+  return (
+    <SearchModalContextProvider>
+      <GlobalStyles />
+      <Search /> {/* adding it to the component tree for it to work */}
+      <Header />
+      <main>{children}</main>
+      <Footer />
+    </SearchModalContextProvider>
+  );
+}
+
+export default Layout;
+
+```
+## `web/src/components/Logo.js`
+```
+import React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import LogoStyles from '../styles/LogoStyles';
+
+function Logo() {
+  return (
+    <LogoStyles to="/">
+      <StaticImage
+        src="../images/twotierlogo.jpg"
+        alt="Two Tier Aluminium Hub Logo"
+        placeholder="blurred"
+        width={60}
+        height={60}
+        className="logo-img"
+      />
+    </LogoStyles>
+  );
+}
+export default Logo;
+```
+## `web/src/components/MyPortableText.js`
+```
+import { PortableText } from '@portabletext/react';
+import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import theme from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
+import { getImage, getImageDimensions } from '@sanity/asset-utils';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import ParagraphText from './typography/ParagraphText';
+import { Title } from './typography/Title';
+import sanityConfig from '../../sanity-config';
+import { getSanityImageData } from '../utils/getSanityImageData';
+import { CustomImageStyles } from '../styles/CustomImageStyles';
+
+const myPortableTextComponents = {
+  block: {
+    normal: ({ children }) => <ParagraphText>{children}</ParagraphText>,
+    h1: ({ children }) => <Title>{children}</Title>,
+  },
+  marks: {
+    code: ({ children }) => (
+      <SyntaxHighlighter style={theme} className="bodyCode">
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ),
+  },
+  types: {
+    customImage: ({ value }) => {
+      const imageData = getImage(value.asset, sanityConfig).asset;
+      const { width, height } = getImageDimensions(value);
+
+      const image = {
+        url: imageData.url,
+        width,
+        height,
+      };
+
+      const gatsbyImageData = getSanityImageData({
+        image,
+        layout: 'constrained',
+      });
+
+      return (
+        <CustomImageStyles>
+          <GatsbyImage
+            image={gatsbyImageData}
+            alt={value.alt}
+            className="bodyImage custom-image"
+          />
+        </CustomImageStyles>
+      );
+    },
+  },
+};
+
+function MyPortableText({ value }) {
+  return <PortableText value={value} components={myPortableTextComponents} />;
+}
+
+export default MyPortableText;
+
+```
+## `web/src/components/PageHeader.js`
+```
+import React from 'react';
+import { PageHeaderStyles } from '../styles/PageHeaderStyles';
+import ParagraphText from './typography/ParagraphText';
+import { SectionTitle } from './typography/Title';
+
+function PageHeader({ title, description, children, className }) {
+  return (
+    <div className={className}>
+      <PageHeaderStyles>
+        <SectionTitle>{title}</SectionTitle>
+        <ParagraphText>{description}</ParagraphText>
+        {children}
+      </PageHeaderStyles>
+    </div>
+  );
+}
+
+export default PageHeader;
+
+```
+## `web/src/components/PageSpace.js`
+```
+import React from 'react';
+import { PageSpaceStyles } from '../styles/PageSpaceStyles';
+
+function PageSpace({ top, bottom, children }) {
+  return (
+    <PageSpaceStyles top={top} bottom={bottom}>
+      {children}
+    </PageSpaceStyles>
+  );
+}
+
+export default PageSpace;
+
+```
+## `web/src/components/Pagination.js`
+```
+import React from 'react';
+import { Link } from 'gatsby';
+import clsx from 'clsx';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { PaginationStyles } from '../styles/PaginationStyles';
+import ParagraphText from './typography/ParagraphText';
+
+function Pagination({ baseURL, numberOfPages, currentPage }) {
+  const prevPage = currentPage - 1 <= 1 ? '' : (currentPage - 1).toString();
+  const nextPage = (currentPage + 1).toString();
+  return (
+    <div className="container">
+      <PaginationStyles>
+        <div className="icons">
+          <Link
+            to={`${baseURL}/${prevPage}`}
+            className={clsx(currentPage <= 1 && 'disabled')}
+          >
+            <FiChevronLeft /> Prev
+          </Link>
+          <Link
+            to={`${baseURL}/${nextPage}`}
+            className={clsx(currentPage >= numberOfPages && 'disabled')}
+          >
+            Next <FiChevronRight />
+          </Link>
+        </div>
+        <ParagraphText>
+          page {currentPage} of {numberOfPages} pages
+        </ParagraphText>
+      </PaginationStyles>
+    </div>
+  );
+}
+
+export default Pagination;
+
+```
+## `web/src/components/author/AuthorGrid.js`
+```
+import React from 'react';
+import { AuthorGridStyles } from '../../styles/author/AuthorGridStyles';
+import AuthorItem from './AuthorItem';
+
+function AuthorGrid({ authors }) {
+  return (
+    <AuthorGridStyles>
+      {authors.map((item) => (
+        <AuthorItem
+          key={item.id}
+          name={item.name}
+          slug={item.slug}
+          profileImage={item.profileImage}
+        />
+      ))}
+    </AuthorGridStyles>
+  );
+}
+
+export default AuthorGrid;
+
+```
+## `web/src/components/author/AuthorItem.js`
+```
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { AuthorItemStyles } from "../../styles/author/AuthorItemStyles";
+import { Title } from "../typography/Title";
+
+function AuthorItem({ name, slug, profileImage }) {
+  return (
+    <AuthorItemStyles className="author-item" to={`/team/${slug.current}`}>
+      {profileImage && (
+        <GatsbyImage
+          image={profileImage.asset.gatsbyImageData}
+          alt={profileImage.alt || name}
+          className="profileImage"
+        />
+      )}
+      <Title>{name}</Title>
+    </AuthorItemStyles>
+  );
+}
+
+export default AuthorItem;
+
+```
+## `web/src/components/blog/BlogGrid.js`
+```
+import React from 'react';
+import { BlogGridStyles } from '../../styles/blog/BlogGridStyles';
+import BlogItem from './BlogItem';
+
+function BlogGrid({ blogs, prefix = "spotlight" }) {
+  return (
+    <BlogGridStyles>
+      {blogs &&
+        blogs.map((blog) => (
+          <BlogItem
+            key={blog.id}
+            path={blog.slug.current}
+            title={blog.title}
+            categories={blog.categories}
+            image={{
+              imageData: blog.coverImage?.asset?.gatsbyImageData,
+              altText: blog.coverImage?.alt,
+            }}
+            publishedAt={blog.publishedAt}
+            // Use the item's own prefix if it has one, otherwise fallback to the grid default
+            prefix={blog.prefix || prefix} 
+          />
+        ))}
+    </BlogGridStyles>
+  );
+}
+
+export default BlogGrid;
+```
+## `web/src/components/blog/BlogItem.js`
+```
+import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { format } from 'date-fns';
+import React from 'react';
+import { BlogItemStyles } from '../../styles/blog/BlogItemStyles';
+import ParagraphText from '../typography/ParagraphText';
+import { Title } from '../typography/Title';
+import { FiCalendar } from 'react-icons/fi';
+import { BiCategory } from 'react-icons/bi';
+import { FaChevronRight } from 'react-icons/fa'; // Added icon for the pill button
+
+function BlogItem({ path, title, image, categories =[], publishedAt, prefix }) {
+  return (
+    <BlogItemStyles>
+      {/* 1. Card Image */}
+      <Link to={`/${prefix}/${path}`} className="img-link">
+        {image?.imageData && (
+          <GatsbyImage
+            image={image.imageData}
+            alt={image.altText || title}
+            className="img"
+          />
+        )}
+      </Link>
+      
+      {/* 2. Card Title */}
+      <Link to={`/${prefix}/${path}`} className="title-link">
+        <Title className="title">{title}</Title>
+      </Link>
+      
+      {/* 3. Metadata (Date & Category) */}
+      <div className="meta-container">
+        {publishedAt && (
+          <ParagraphText className="publishedAt">
+            <FiCalendar />
+            {format(new Date(publishedAt), 'p, MMMM dd, yyyy')}
+          </ParagraphText>
+        )}
+        {categories.length > 0 && (
+          <ParagraphText className="categoriesText">
+            <BiCategory />
+            <span>
+              {categories.map((item, index) => (
+                <span key={item.slug.current}>
+                  <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
+                  {index < categories.length - 1 ? ', ' : ''}
+                </span>
+              ))}
+            </span>
+          </ParagraphText>
+        )}
+      </div>
+
+      {/* 4. The SVG-Inspired Pill Button */}
+      <Link to={`/${prefix}/${path}`} className="action-pill-link">
+        <div className="action-pill">
+          <div className="icon-circle">
+            <FaChevronRight />
+          </div>
+          <span>View Project</span>
+        </div>
+      </Link>
+    </BlogItemStyles>
+  );
+}
+
+export default BlogItem;
+```
+## `web/src/components/buttons/ActionButton.js`
+```
+import React from 'react';
+import ActionButtonStyles from '../../styles/buttons/ActionButtonStyles';
+
+// remove rest here to see its effect and also why we need it, and the effect of 2 func params in react
+function ActionButton({ children, ...rest }) {
+  return (
+    <ActionButtonStyles
+      className="mobileMenuBtn"
+      role="button"
+      tabIndex={0}
+      {...rest}
+    >
+      {children}
+    </ActionButtonStyles>
+  );
+}
+
+export default ActionButton;
+
+```
+## `web/src/components/buttons/Button.js`
+```
+import React from 'react';
+import { buttonTypes } from '../../constants/buttonTypes';
+import { ButtonStyles } from '../../styles/buttons/ButtonStyles';
+
+function Button({ children, tag, variant = buttonTypes.primary, ...props }) {
+  return (
+    // tag allows us to render the component as either a tag we will specify. More explanation is needed // possibly because ButtonStyles is a styled components Link underneath??
+    <ButtonStyles as={tag} {...props} variant={variant}>
+      {children}
+    </ButtonStyles>
+  );
+}
+
+export default Button;
+
+```
+## `web/src/components/category/ActivityGrid.js`
+```
+import React from 'react';
+import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
+import ActivityItem from './ActivityItem';
+
+function ActivityGrid({ activities }) {
+  return (
+    <CategoryGridStyles>
+      {activities.map((item) => (
+        <ActivityItem
+          key={item.id}
+          title={item.title}
+          description={item._rawDescription}
+          slug={item.slug}
+        />
+      ))}
+    </CategoryGridStyles>
+  );
+}
+
+export default ActivityGrid;
+
+```
+## `web/src/components/category/ActivityItem.js`
+```
+import React from 'react';
+import Button from '../buttons/Button';
+import { buttonTypes } from '../../constants/buttonTypes';
+import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
+import { Title } from '../typography/Title';
+import ConstrainedPortableText from '../ConstrainedPortableText';
+
+function ActivityItem({ title, description, slug }) {
+  return (
+    <CategoryItemStyles className="activity-card">
+      <Title className="title">{title}</Title>
+      
+      {/* Wrapped the text so it behaves consistently */}
+      <div className="text-wrap-container">
+        <ConstrainedPortableText value={description} />
+      </div>
+      
+      {/* Wrapped the button so it gets pushed to the bottom and doesn't stretch */}
+      <div className="button-container">
+        <Button to={`/activities/${slug.current}`} variant={buttonTypes.outline}>
+          View Details
+        </Button>
+      </div>
+    </CategoryItemStyles>
+  );
+}
+
+export default ActivityItem;
+```
+## `web/src/components/category/CategoryGrid.js`
+```
+import React from 'react';
+import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
+import CategoryItem from './CategoryItem';
+
+function CategoryGrid({ categories }) {
+  return (
+    <CategoryGridStyles>
+      {categories.map((item) => (
+        <CategoryItem
+          key={item.id}
+          title={item.title}
+          description={item._rawDescription}
+          slug={item.slug}
+          coverImage={item.coverImage}
+        />
+      ))}
+    </CategoryGridStyles>
+  );
+}
+
+export default CategoryGrid;
+
+```
+## `web/src/components/category/CategoryItem.js`
+```
+import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import MyPortableText from '../MyPortableText';
+import Button from '../buttons/Button';
+import { buttonTypes } from '../../constants/buttonTypes';
+import { CategoryItemStyles } from '../../styles/category/CategoryItemStyles';
+import { Title } from '../typography/Title';
+
+function CategoryItem({ title, description, slug, coverImage }) {
+  return (
+    <CategoryItemStyles className="category-card">
+      <Title className="title">{title}</Title>
+      
+      <div className="text-wrap-container">
+        {/* GRACEFUL HANDLING: Only renders if coverImage exists */}
+        {coverImage?.asset && (
+          <div className="card-image-wrapper">
+            <GatsbyImage
+              image={coverImage.asset.gatsbyImageData}
+              alt={coverImage.alt || title}
+              className="wrapped-img"
+              imgStyle={{ objectFit: 'fill' }} /* Forces the aspect ratio distortion */
+            />
+          </div>
+        )}
+        <MyPortableText value={description} />
+      </div>
+
+      <div className="button-container">
+        <Button to={`/categories/${slug.current}`} variant={buttonTypes.outline}>
+          Explore Services
+        </Button>
+      </div>
+    </CategoryItemStyles>
+  );
+}
+
+export default CategoryItem;
+```
+## `web/src/components/category/ObjectiveGrid.js`
+```
+import React from 'react';
+import { CategoryGridStyles } from '../../styles/category/CategoryGridStyles';
+import ObjectiveItem from './ObjectiveItem';
+
+function ObjectiveGrid({ objectives }) {
+  return (
+    <CategoryGridStyles>
+      {objectives.map((item, index) => ( // Note the 'index' added here
+        <ObjectiveItem
+          key={item.id}
+          title={item.title}
+          description={item._rawDescription}
+          index={index} // Passing index to the child
+        />
+      ))}
+    </CategoryGridStyles>
+  );
+}
+
+export default ObjectiveGrid;
+```
+## `web/src/components/category/ObjectiveItem.js`
+```
+import React from 'react';
+import MyPortableText from '../MyPortableText';
+import { PremiumCardStyles } from '../../styles/category/PremiumCardStyles'; // NEW IMPORT
+import { Title } from '../typography/Title'; 
+import { FaRocket } from 'react-icons/fa'; // Icon for objectives
+
+function ObjectiveItem({ title, description, index }) { 
+  // We reverse the themes array so Objectives get different colors than Values
+  const themes =['theme-amethyst', 'theme-emerald', 'theme-amber', 'theme-ocean', 'theme-ruby'];
+  const currentTheme = themes[index % themes.length];
+
+  return (
+    <PremiumCardStyles className={currentTheme}> 
+      <div className="main-card">
+        <span className="card-tag">Strategic Objective</span>
+        
+        <div className="icon-badge">
+          <FaRocket />
+        </div>
+
+        <Title className="title">{title}</Title> 
+        <div className="text-wrap-container">
+          <MyPortableText value={description} />
+        </div>
+      </div>
+    </PremiumCardStyles>
+  );
+}
+
+export default ObjectiveItem;
+```
+## `web/src/components/category/ValueGrid.js`
+```
+import React from "react";
+import { ValueGridStyles } from "../../styles/category/CategoryGridStyles";
+import ValueItem from "./ValueItem";
+
+function ValueGrid({ DiginotiveValues }) {
+  return (
+    <ValueGridStyles>
+      {DiginotiveValues.map((item, index) => ( // Note the 'index' added here
+        <ValueItem
+          key={item.id}
+          title={item.title}
+          description={item._rawDescription}
+          index={index} // Passing index to the child
+        />
+      ))}
+    </ValueGridStyles>
+  );
+}
+
+export default ValueGrid;
+```
+## `web/src/components/category/ValueItem.js`
+```
+import React from 'react';
+import MyPortableText from '../MyPortableText';
+import { PremiumCardStyles } from '../../styles/category/PremiumCardStyles'; // NEW IMPORT
+import { Title } from '../typography/Title';
+import { FaGem } from 'react-icons/fa'; // Icon for values
+
+function ValueItem({ title, description, index }) {
+  // Rotate through 5 color themes based on the index
+  const themes =['theme-ruby', 'theme-ocean', 'theme-amber', 'theme-emerald', 'theme-amethyst'];
+  const currentTheme = themes[index % themes.length];
+
+  return (
+    <PremiumCardStyles className={currentTheme}> 
+      <div className="main-card">
+        <span className="card-tag">Core Value</span>
+        
+        <div className="icon-badge">
+          <FaGem />
+        </div>
+
+        <Title className="title">{title}</Title>
+        <div className="text-wrap-container">
+          <MyPortableText value={description} />
+        </div>
+      </div>
+    </PremiumCardStyles>
+  );
+}
+
+export default ValueItem;
+```
+## `web/src/components/homePage/FeaturedBlogs.js`
 ```
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
@@ -60483,7 +60678,7 @@ export default FeaturedBlogs;
 /// #1ff4b4 - light green, #2c313e - dark bluish, #cbdd46 - gold
 
 ```
-## `web\src\components\homePage\HeroSection.js`
+## `web/src/components/homePage/HeroSection.js`
 ```
 import React, { useState, useEffect } from "react";
 import { StaticImage } from "gatsby-plugin-image";
@@ -60500,12 +60695,12 @@ function HeroSection() {
   // Carousel State
   const [currentImage, setCurrentImage] = useState(0);
 
-  const services = [
-    "Rubble Removal",
-    "Site Clearing",
-    "Garden Waste Removal",
-    "Construction Debris",
-    "Small & Medium Transport",
+   const services = [
+    "Aluminium Profiles",
+    "Hardware & Tools",
+    "Fasteners (Nuts & Bolts)",
+    "Custom Extrusions",
+    "Bulk Supply",
   ];
 
   // Auto-rotate the images inside the SVG every 3.5 seconds
@@ -60541,37 +60736,81 @@ function HeroSection() {
     <HeroSectionStyles>
       <div className="container">
         <div className="hero__wrapper">
-          
           {/* LEFT SIDE: Text + SVG Carousel */}
           <div className="left">
-            <div className="badge">✅ SAME-DAY SERVICE AVAILABLE</div>
-            <h1 className="hero__heading">Fast & Affordable Rubble Removal in Midrand</h1>
-            
+            <div className="badge">✅ QUALITY HARDWARE. ENDLESS SOLUTIONS.</div>
+            <h1 className="hero__heading">
+              Premium Aluminium & Hardware Supplies
+            </h1>
+
             {/* THE 3D GLASSMORPHIC SVG CAROUSEL */}
             <div className="svg-carousel-container">
-              <svg width="100%" viewBox="0 0 310 432" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="100%"
+                viewBox="0 0 310 432"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 {/* Back Drop Shadow */}
-                <path d="M9.29688 0.958984L241.912 60.0358C274.03 68.1926 300.066 101.668 300.066 134.805V371.805C300.066 404.942 274.03 425.193 241.912 417.036L67.4507 372.728C35.3332 364.571 9.29688 331.096 9.29688 297.959V0.958984Z" fill="black" fillOpacity="0.6"/>
-                
+                <path
+                  d="M9.29688 0.958984L241.912 60.0358C274.03 68.1926 300.066 101.668 300.066 134.805V371.805C300.066 404.942 274.03 425.193 241.912 417.036L67.4507 372.728C35.3332 364.571 9.29688 331.096 9.29688 297.959V0.958984Z"
+                  fill="black"
+                  fillOpacity="0.6"
+                />
+
                 {/* The Tilted Yellow/Orange Gradient Card */}
-                <path d="M9.29688 0.958984L247.633 29.168C280.541 33.0628 307.217 63.0831 307.217 96.2202V333.22C307.217 366.357 280.541 390.063 247.633 386.168L68.881 365.011C35.9736 361.116 9.29688 331.096 9.29688 297.959V0.958984Z" fill="url(#paint0_linear_midrand)"/>
-                
+                <path
+                  d="M9.29688 0.958984L247.633 29.168C280.541 33.0628 307.217 63.0831 307.217 96.2202V333.22C307.217 366.357 280.541 390.063 247.633 386.168L68.881 365.011C35.9736 361.116 9.29688 331.096 9.29688 297.959V0.958984Z"
+                  fill="url(#paint0_linear_midrand)"
+                />
+
                 {/* Re-Mapped Glass Panel (Masking the Images) */}
                 <foreignObject x="11" y="8" width="288" height="364">
                   <div className="carousel-mask">
-                    
                     {/* The 4 Uploaded Flyers - FORCED DISTORTION (fill) */}
-                    <div className={`carousel-image ${currentImage === 0 ? 'active' : ''}`}>
-                      <StaticImage src="../../images/hero1.jpg" alt="Rubble Removal" objectFit="fill" imgStyle={{ objectFit: 'fill' }} style={{ width: '100%', height: '100%' }} />
+                    <div
+                      className={`carousel-image ${currentImage === 0 ? "active" : ""}`}
+                    >
+                      <StaticImage
+                        src="../../images/hero1.jpg"
+                        alt="Rubble Removal"
+                        objectFit="fill"
+                        imgStyle={{ objectFit: "fill" }}
+                        style={{ width: "100%", height: "100%" }}
+                      />
                     </div>
-                    <div className={`carousel-image ${currentImage === 1 ? 'active' : ''}`}>
-                      <StaticImage src="../../images/hero2.jpg" alt="Site Clearing" objectFit="fill" imgStyle={{ objectFit: 'fill' }} style={{ width: '100%', height: '100%' }} />
+                    <div
+                      className={`carousel-image ${currentImage === 1 ? "active" : ""}`}
+                    >
+                      <StaticImage
+                        src="../../images/hero2.jpg"
+                        alt="Site Clearing"
+                        objectFit="fill"
+                        imgStyle={{ objectFit: "fill" }}
+                        style={{ width: "100%", height: "100%" }}
+                      />
                     </div>
-                    <div className={`carousel-image ${currentImage === 2 ? 'active' : ''}`}>
-                      <StaticImage src="../../images/hero3.jpg" alt="Garden Waste" objectFit="fill" imgStyle={{ objectFit: 'fill' }} style={{ width: '100%', height: '100%' }} />
+                    <div
+                      className={`carousel-image ${currentImage === 2 ? "active" : ""}`}
+                    >
+                      <StaticImage
+                        src="../../images/hero3.jpg"
+                        alt="Garden Waste"
+                        objectFit="fill"
+                        imgStyle={{ objectFit: "fill" }}
+                        style={{ width: "100%", height: "100%" }}
+                      />
                     </div>
-                    <div className={`carousel-image ${currentImage === 3 ? 'active' : ''}`}>
-                      <StaticImage src="../../images/hero4.jpg" alt="Construction Debris" objectFit="fill" imgStyle={{ objectFit: 'fill' }} style={{ width: '100%', height: '100%' }} />
+                    <div
+                      className={`carousel-image ${currentImage === 3 ? "active" : ""}`}
+                    >
+                      <StaticImage
+                        src="../../images/hero4.jpg"
+                        alt="Construction Debris"
+                        objectFit="fill"
+                        imgStyle={{ objectFit: "fill" }}
+                        style={{ width: "100%", height: "100%" }}
+                      />
                     </div>
 
                     {/* The Glossy Reflection Overlay */}
@@ -60580,26 +60819,35 @@ function HeroSection() {
                 </foreignObject>
 
                 <defs>
-                  <linearGradient id="paint0_linear_midrand" x1="9.29688" y1="0.958984" x2="-32.3731" y2="353.027" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#FFCC00"/>
-                    <stop offset="1" stopColor="#D4A000"/>
+                  <linearGradient
+                    id="paint0_linear_midrand"
+                    x1="9.29688"
+                    y1="0.958984"
+                    x2="-32.3731"
+                    y2="353.027"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#FFCC00" />
+                    <stop offset="1" stopColor="#D4A000" />
                   </linearGradient>
                 </defs>
               </svg>
             </div>
 
             <ParagraphText className="hero__text">
-              We Load. We Clear. You Relax. Serving Midrand, Centurion, Sandton, and Fourways with reliable site clearing and construction debris transport.
+              Your trusted hub for high-grade aluminium extrusions, structural
+              hardware, tools, and accessories. Built for contractors, builders,
+              and DIY enthusiasts.
             </ParagraphText>
-            
+
             <div className="hero__action-buttons">
-              <Button tag="a" href="https://wa.me/27786112695" target="_blank" className="btn-whatsapp">
-                <FaWhatsapp style={{ marginRight: '8px' }} /> WhatsApp Us
-              </Button>
-              <Button tag="a" href="tel:+27810786434" variant="outline" className="btn-call">
-                <FaPhoneAlt style={{ marginRight: '8px' }} /> Call Sbusiso
-              </Button>
-            </div>
+      <Button tag="a" href="https://wa.me/263719875027" target="_blank" className="btn-whatsapp">
+        <FaWhatsapp style={{marginRight: '8px'}} /> WhatsApp Us
+      </Button>
+      <Button tag="a" href="tel:+263719875027" variant="outline" className="btn-call">
+        <FaPhoneAlt style={{marginRight: '8px'}} /> Call Sales
+      </Button>
+    </div>
           </div>
 
           {/* RIGHT SIDE: Quote Form */}
@@ -60609,37 +60857,64 @@ function HeroSection() {
                 <div className="success-message">
                   <FaCheckCircle className="success-icon" />
                   <h3>Request Sent!</h3>
-                  <p>Sibusiso or Tshiamo will contact you shortly with your quote.</p>
-                  <button onClick={() => setIsSubmitted(false)} className="reset-btn">Send another request</button>
+                  <p>
+                    Tariro or Wendy will contact you shortly with your
+                    quote.
+                  </p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="reset-btn"
+                  >
+                    Send another request
+                  </button>
                 </div>
               ) : (
                 <>
                   <h3>Get a Quick Quote</h3>
-                  <form 
-                    name="quick-quote" 
-                    method="POST" 
-                    data-netlify="true" 
+                  <form
+                    name="quick-quote"
+                    method="POST"
+                    data-netlify="true"
                     data-netlify-honeypot="bot-field"
                     onSubmit={handleSubmit}
                   >
                     <input type="hidden" name="form-name" value="quick-quote" />
-                    <p hidden><label>Don’t fill this out: <input name="bot-field" /></label></p>
+                    <p hidden>
+                      <label>
+                        Don’t fill this out: <input name="bot-field" />
+                      </label>
+                    </p>
 
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required />
-                    
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Your Name"
+                      required
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone / WhatsApp"
+                      required
+                    />
+
                     <div className="custom-select-container">
-                      <div className={`select-trigger ${isOpen ? 'active' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+                      <div
+                        className={`select-trigger ${isOpen ? "active" : ""}`}
+                        onClick={() => setIsOpen(!isOpen)}
+                      >
                         <span>{selectedService}</span>
-                        <FaChevronDown className={`arrow ${isOpen ? 'open' : ''}`} />
+                        <FaChevronDown
+                          className={`arrow ${isOpen ? "open" : ""}`}
+                        />
                       </div>
-                      
+
                       {isOpen && (
                         <div className="dropdown-menu">
                           {services.map((service) => (
-                            <div 
-                              key={service} 
-                              className="dropdown-item" 
+                            <div
+                              key={service}
+                              className="dropdown-item"
                               onClick={() => {
                                 setSelectedService(service);
                                 setIsOpen(false);
@@ -60650,17 +60925,22 @@ function HeroSection() {
                           ))}
                         </div>
                       )}
-                      <input type="hidden" name="service" value={selectedService} />
+                      <input
+                        type="hidden"
+                        name="service"
+                        value={selectedService}
+                      />
                     </div>
 
-                    <textarea name="message" placeholder="Briefly describe what needs clearing..." rows="3"></textarea>
-                    <button type="submit" className="submit-btn">Send Request</button>
+                    <textarea name="message" placeholder="Briefly describe the materials/hardware you need, or how we may assist you..." rows="3"></textarea>
+                    <button type="submit" className="submit-btn">
+                      Send Request
+                    </button>
                   </form>
                 </>
               )}
             </div>
           </div>
-
         </div>
       </div>
     </HeroSectionStyles>
@@ -60669,7 +60949,7 @@ function HeroSection() {
 
 export default HeroSection;
 ```
-## `web\src\components\homePage\TopCategories.js`
+## `web/src/components/homePage/TopCategories.js`
 ```
 import { graphql, useStaticQuery } from "gatsby";
 import React, { useState, useEffect, useRef } from "react"; // Added hooks
@@ -60685,22 +60965,22 @@ import CategoryGrid from "../category/CategoryGrid";
 const initialCards = [
   {
     id: "mission",
-    title: "The Mission of Certainty",
-    text: "Our mission is the absolute eradication of chaos from your job site. We deploy rapid-response tactical units and heavy-duty transport to instantly lift the burden of waste from our clients' shoulders. We provide a project-ready environment—same hour, same day, every day.",
+    title: "Our Mission",
+    text: "To supply top-tier aluminium products and durable hardware to builders, contractors, and DIY enthusiasts, ensuring every project is built to last.",
     theme: "theme-slate",
-    icon: <FaBullseye />
+    icon: <FaBullseye />,
   },
   {
     id: "vision",
-    title: "The Vision",
-    text: "To be the undisputed sovereign of site clearing and logistical waste management in South Africa. We aim to set an uncompromising benchmark where our name is synonymous with unshakeable reliability and environmental precision.",
+    title: "Our Vision",
+    text: "To be the leading and most trusted structural hardware and aluminium hub, recognized for premium quality, endless solutions, and exceptional service.",
     theme: "theme-dark",
-    icon: <FaEye />
+    icon: <FaEye />,
   },
   {
     id: "capabilities",
-    title: "Strategic Industrial Capabilities",
-    text: "We provide the logistical muscle that keeps Gauteng’s development moving. From high-capacity NP300 fleet deployments to specialized heavy-duty manpower, our core services are engineered to handle the most demanding site clearing and debris challenges.",
+    title: "Extensive Inventory",
+    text: "From heavy-duty fasteners to custom aluminium extrusions and professional-grade tools, our catalog is engineered to handle your most demanding structural needs.",
     theme: "theme-yellow",
     icon: <FaHardHat />
   }
@@ -60846,195 +61126,7 @@ function TopCategories() {
 
 export default TopCategories;
 ```
-## `web\src\components\Layout.js`
-```
-import React from 'react';
-import Header from './Header';
-import GlobalStyles from '../styles/GlobalStyles';
-import 'normalize.css/normalize.css';
-import Footer from './Footer';
-import Search from './search/SearchModal';
-import { SearchModalContextProvider } from '../contexts/searchModalContext';
-
-function Layout({ children }) {
-  return (
-    <SearchModalContextProvider>
-      <GlobalStyles />
-      <Search /> {/* adding it to the component tree for it to work */}
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </SearchModalContextProvider>
-  );
-}
-
-export default Layout;
-
-```
-## `web\src\components\Logo.js`
-```
-import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
-import LogoStyles from '../styles/LogoStyles';
-
-function Logo() {
-  return (
-    <LogoStyles to="/">
-      <StaticImage 
-        src="../images/midrandrubblelogo.jpeg" 
-        alt="Midrand Rubble Logo"
-        placeholder="blurred"
-        width={60}
-        height={60}
-        className="logo-img"
-      />
-    </LogoStyles>
-  );
-}
-
-export default Logo;
-```
-## `web\src\components\MyPortableText.js`
-```
-import { PortableText } from '@portabletext/react';
-import React from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import theme from 'react-syntax-highlighter/dist/esm/styles/prism/vs-dark';
-import { getImage, getImageDimensions } from '@sanity/asset-utils';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import ParagraphText from './typography/ParagraphText';
-import { Title } from './typography/Title';
-import sanityConfig from '../../sanity-config';
-import { getSanityImageData } from '../utils/getSanityImageData';
-import { CustomImageStyles } from '../styles/CustomImageStyles';
-
-const myPortableTextComponents = {
-  block: {
-    normal: ({ children }) => <ParagraphText>{children}</ParagraphText>,
-    h1: ({ children }) => <Title>{children}</Title>,
-  },
-  marks: {
-    code: ({ children }) => (
-      <SyntaxHighlighter style={theme} className="bodyCode">
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighter>
-    ),
-  },
-  types: {
-    customImage: ({ value }) => {
-      const imageData = getImage(value.asset, sanityConfig).asset;
-      const { width, height } = getImageDimensions(value);
-
-      const image = {
-        url: imageData.url,
-        width,
-        height,
-      };
-
-      const gatsbyImageData = getSanityImageData({
-        image,
-        layout: 'constrained',
-      });
-
-      return (
-        <CustomImageStyles>
-          <GatsbyImage
-            image={gatsbyImageData}
-            alt={value.alt}
-            className="bodyImage custom-image"
-          />
-        </CustomImageStyles>
-      );
-    },
-  },
-};
-
-function MyPortableText({ value }) {
-  return <PortableText value={value} components={myPortableTextComponents} />;
-}
-
-export default MyPortableText;
-
-```
-## `web\src\components\PageHeader.js`
-```
-import React from 'react';
-import { PageHeaderStyles } from '../styles/PageHeaderStyles';
-import ParagraphText from './typography/ParagraphText';
-import { SectionTitle } from './typography/Title';
-
-function PageHeader({ title, description, children, className }) {
-  return (
-    <div className={className}>
-      <PageHeaderStyles>
-        <SectionTitle>{title}</SectionTitle>
-        <ParagraphText>{description}</ParagraphText>
-        {children}
-      </PageHeaderStyles>
-    </div>
-  );
-}
-
-export default PageHeader;
-
-```
-## `web\src\components\PageSpace.js`
-```
-import React from 'react';
-import { PageSpaceStyles } from '../styles/PageSpaceStyles';
-
-function PageSpace({ top, bottom, children }) {
-  return (
-    <PageSpaceStyles top={top} bottom={bottom}>
-      {children}
-    </PageSpaceStyles>
-  );
-}
-
-export default PageSpace;
-
-```
-## `web\src\components\Pagination.js`
-```
-import React from 'react';
-import { Link } from 'gatsby';
-import clsx from 'clsx';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { PaginationStyles } from '../styles/PaginationStyles';
-import ParagraphText from './typography/ParagraphText';
-
-function Pagination({ baseURL, numberOfPages, currentPage }) {
-  const prevPage = currentPage - 1 <= 1 ? '' : (currentPage - 1).toString();
-  const nextPage = (currentPage + 1).toString();
-  return (
-    <div className="container">
-      <PaginationStyles>
-        <div className="icons">
-          <Link
-            to={`${baseURL}/${prevPage}`}
-            className={clsx(currentPage <= 1 && 'disabled')}
-          >
-            <FiChevronLeft /> Prev
-          </Link>
-          <Link
-            to={`${baseURL}/${nextPage}`}
-            className={clsx(currentPage >= numberOfPages && 'disabled')}
-          >
-            Next <FiChevronRight />
-          </Link>
-        </div>
-        <ParagraphText>
-          page {currentPage} of {numberOfPages} pages
-        </ParagraphText>
-      </PaginationStyles>
-    </div>
-  );
-}
-
-export default Pagination;
-
-```
-## `web\src\components\search\SearchField.js`
+## `web/src/components/search/SearchField.js`
 ```
 import React from "react";
 import { FiSearch } from "react-icons/fi";
@@ -61058,7 +61150,7 @@ function SearchField({ value, setValue, onFocus }) {
 export default SearchField;
 
 ```
-## `web\src\components\search\SearchModal.js`
+## `web/src/components/search/SearchModal.js`
 ```
 import axios from "axios";
 import { graphql, useStaticQuery } from "gatsby";
@@ -61201,7 +61293,7 @@ function Search() {
 export default Search;
 
 ```
-## `web\src\components\search\SearchResult.js`
+## `web/src/components/search/SearchResult.js`
 ```
 import React from "react";
 import { useFlexSearch } from "react-use-flexsearch";
@@ -61323,7 +61415,7 @@ function SearchResult({
 export default SearchResult;
 
 ```
-## `web\src\components\search\SearchResultItem.js`
+## `web/src/components/search/SearchResultItem.js`
 ```
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { useContext } from "react";
@@ -61431,7 +61523,7 @@ export {
 };
 
 ```
-## `web\src\components\seo.js`
+## `web/src/components/seo.js`
 ```
 import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
@@ -61466,7 +61558,7 @@ const SEO = ({ title, description }) => {
 
 export default SEO;
 ```
-## `web\src\components\typography\ParagraphText.js`
+## `web/src/components/typography/ParagraphText.js`
 ```
 import React from 'react';
 import { ParagraphTextStyles } from '../../styles/typography/ParagraphTextStyles';
@@ -61478,7 +61570,7 @@ function ParagraphText({ children, ...props }) {
 export default ParagraphText;
 
 ```
-## `web\src\components\typography\Title.js`
+## `web/src/components/typography/Title.js`
 ```
 import React from 'react';
 import {
@@ -61499,7 +61591,7 @@ export const Title = ({ children, tag, ...props }) => (
 );
 
 ```
-## `web\src\constants\buttonTypes.js`
+## `web/src/constants/buttonTypes.js`
 ```
 export const buttonTypes = {
   primary: 'primary',
@@ -61508,7 +61600,7 @@ export const buttonTypes = {
 };
 
 ```
-## `web\src\constants\menu.js`
+## `web/src/constants/menu.js`
 ```
 export const menu = [
   { title: 'Home', path: '/' },
@@ -61517,7 +61609,7 @@ export const menu = [
   { title: 'About Us', path: '/team' },
 ];
 ```
-## `web\src\constants\socialLinks.js`
+## `web/src/constants/socialLinks.js`
 ```
 import React from 'react';
 import {
@@ -61532,46 +61624,46 @@ import { IoIosMailUnread } from 'react-icons/io';
 
 export const socialLinks = [
   {
-    name: "call-sbusiso",
-    url: "tel:+27810786434",
+    name: "call-tariro",
+    url: "tel:+263719875027",
     icon: <FaPhoneSquareAlt />,
   },
   {
-    name: "call-tshiamo",
-    url: "tel:+27836512596",
+    name: "call-wendy",
+    url: "tel:+263778296767",
     icon: <FaPhoneSquareAlt />,
   },
   {
     name: "whatsapp",
-    url: `https://wa.me/27786112695?text=${encodeURIComponent(
-      "Hi Midrand Rubble Removal, I am interested in your services and I would like a quick quote",
+    url: `https://wa.me/263719875027?text=${encodeURIComponent(
+       "Hi Two Tier Aluminium Hub, I am interested in your hardware/aluminium products and would like a quote.",
     )}`,
     icon: <FaWhatsappSquare />,
   },
   {
     name: "mail",
-    url: "mailto:midrandrubbleremoval1@gmail.com",
+    url: "mailto:simbadombo@icloud.com",
     icon: <IoIosMailUnread />,
   },
   {
     name: "facebook",
-    url: "https://www.facebook.com/midrandrubble",
+    url: "https://www.facebook.com/twotieraluminum",
     icon: <FaFacebook />,
   },
   {
     name: "twitter",
-    url: "https://twitter.com/midrandrubble",
+    url: "https://twitter.com/twotieraluminum",
     icon: <FaTwitter />,
   },
   {
     name: "linkedin",
-    url: "https://www.linkedin.com/company/midrandrubble",
+    url: "https://www.linkedin.com/company/twotieraluminum",
     icon: <FaLinkedin />,
   },
 ];
 
 ```
-## `web\src\contexts\searchModalContext.js`
+## `web/src/contexts/searchModalContext.js`
 ```
 import React, { createContext, useMemo, useState } from 'react';
 
@@ -61602,43 +61694,47 @@ const SearchModalContextProvider = ({ children }) => {
 export { SearchModalContext, SearchModalContextProvider };
 
 ```
-## `web\src\images\demtMalnutrition.jpg`
+## `web/src/images/demtMalnutrition.jpg`
 
 Media file detected (.jpg)
 
-## `web\src\images\hero1.jpg`
+## `web/src/images/hero1.jpg`
 
 Media file detected (.jpg)
 
-## `web\src\images\hero2.jpg`
+## `web/src/images/hero2.jpg`
 
 Media file detected (.jpg)
 
-## `web\src\images\hero3.jpg`
+## `web/src/images/hero3.jpg`
 
 Media file detected (.jpg)
 
-## `web\src\images\hero4.jpg`
+## `web/src/images/hero4.jpg`
 
 Media file detected (.jpg)
 
-## `web\src\images\midrandrubble - Copy.jpeg`
+## `web/src/images/midrandrubble - Copy.jpeg`
 
 Media file detected (.jpeg)
 
-## `web\src\images\midrandrubble.ico.jpeg`
+## `web/src/images/midrandrubble.ico.jpeg`
 
 Media file detected (.jpeg)
 
-## `web\src\images\midrandrubble.jpeg`
+## `web/src/images/midrandrubble.jpeg`
 
 Media file detected (.jpeg)
 
-## `web\src\images\midrandrubblelogo.jpeg`
+## `web/src/images/midrandrubblelogo.jpeg`
 
 Media file detected (.jpeg)
 
-## `web\src\pages\404.js`
+## `web/src/images/twotierlogo.jpg`
+
+Media file detected (.jpg)
+
+## `web/src/pages/404.js`
 ```
 import React from 'react';
 import { Link } from 'gatsby';
@@ -61670,7 +61766,7 @@ function NotFoundPage() {
 export default NotFoundPage;
 
 ```
-## `web\src\pages\index.js`
+## `web/src/pages/index.js`
 ```
 import React from "react";
 import FeaturedBlogs from "../components/homePage/FeaturedBlogs";
@@ -61692,7 +61788,470 @@ const IndexPage = () => (
 export default IndexPage;
 
 ```
-## `web\src\styles\author\AuthorGridStyles.js`
+## `web/src/styles/CustomImageStyles.js`
+```
+import styled from 'styled-components';
+
+export const CustomImageStyles = styled.div`
+  .custom-image {
+    max-width: 180px;
+    max-height: 180px;
+    border-radius: 10px;
+    margin: 15px;
+  }
+`;
+
+```
+## `web/src/styles/FooterStyles.js`
+```
+import styled from 'styled-components';
+
+export const FooterStyles = styled.footer`
+  padding: 5rem 0 2rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #0A0500, #000000); /* Dark orange/black gradient */
+  border-top: 1px solid rgba(243, 112, 33, 0.2);
+  .footer__text {
+    margin: 0 auto;
+    margin-top: 1rem;
+    max-width: 400px;
+  }
+  .footer__menuList {
+    margin-top: 1rem;
+    li {
+      display: inline-block;
+      margin: 0 1rem;
+      a {
+        color: var(--white-1);
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .footer__socialList {
+    margin-top: 1.5rem;
+    li {
+      display: inline-block; 
+      margin: 0 0.5rem;
+      a {
+        display: inline-block;
+        width: 20px;
+        color: var(--gray);
+      }
+      :hover {
+        a {
+          color: var(--white-1);
+        }
+      }
+    }
+  }
+  .copyright {
+    margin-top: 1rem;
+    color: var(--gray);
+    font-size: 1.2rem;
+  }
+`;
+
+```
+## `web/src/styles/GlobalStyles.js`
+```
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* Two Tier Aluminium Theme: Gold, Navy Blue, and Silver */
+    --primary: #D4AF37; /* Metallic Gold */
+    --secondary: #1F3A60; /* Navy Blue */
+    --darkBlue: #0A192F; 
+    --darkPurple: #1C1C1E; 
+    --black-1: #0B1120; /* Deep Navy background */
+    --black-2: rgba(11, 17, 32, 0.85); 
+    --white-1: #F5F5F7;
+    --gray: #A0AABF; /* Silver/Slate */
+    --grey: var(--gray);
+    --white: #ffffff;
+    --black: #000000;
+  }
+
+  html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    line-height: 1.5;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    
+    /* Deep dark base with vibrant ambient glowing orbs */
+    background-color: var(--black-1);
+    /* We add a subtle dark overlay over the waves so your white text stays 100% readable */
+    background-image: linear-gradient(rgba(10, 10, 11, 0.4), rgba(10, 10, 11, 0.8)), url('/bg-waves.svg');
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* THE GHOST WATERMARK */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;  /* Giant scale */
+    height: 80vw;
+    background-image: url("/twotierlogo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    opacity: 0.15; 
+    
+    pointer-events: none; /* User can click through it */
+    z-index: -1; /* Sits behind everything */
+    filter: grayscale(100%) brightness(200%); /* Makes it look etched */
+  }
+
+  @media only screen and (max-width: 768px) {
+    body::before {
+      width: 150vw; /* Even larger on mobile so only part of it shows */
+      opacity: 0.04;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  img, svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  li, ul {
+    list-style: none;
+  }
+
+  /* Professional Entrance Animations */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Dynamic Orange Glow */
+  @keyframes glowPulse {
+    0% {
+      box-shadow: 0 0 8px rgba(243, 112, 33, 0.15), inset 0 0 0px rgba(243, 112, 33, 0);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(243, 112, 33, 0.5), inset 0 0 10px rgba(243, 112, 33, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 8px rgba(243, 112, 33, 0.15), inset 0 0 0px rgba(243, 112, 33, 0);
+    }
+  }
+
+  @keyframes borderGlow {
+    0% { border-color: rgba(243, 112, 33, 0.2); }
+    50% { border-color: rgba(243, 112, 33, 0.6); }
+    100% { border-color: rgba(243, 112, 33, 0.2); }
+  }
+`;
+
+export default GlobalStyles;
+```
+## `web/src/styles/HeaderStyles.js`
+```
+import styled from 'styled-components';
+
+export default styled.header`
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  overflow: hidden;
+  padding: 1rem 0;
+  transition: background 0.3s ease-in-out;
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__wrapper {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      li {
+        &:hover {
+          a {
+            background: #2c313e;
+          }
+        }
+        a {
+          color: var(--white-1);
+          display: inline-block;
+          text-decoration: none;
+          font-size: 1.6rem;
+          padding: 0.5rem 1rem;
+          border-radius: 6px;
+        }
+      }
+    }
+  }
+
+  .searchIcon {
+    cursor: pointer;
+    font-size: 25px;
+    .searchIcon__wrapper {
+      border-radius: 6px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0a2b63;
+    }
+  }
+  .mobileMenuCloseBtn,
+  .mobileNavBg,
+  .mobileIcon,
+  .mobileMenuBtn {
+    display: none;
+  }
+  @media only screen and (max-width: 768px) {
+    .mobileMenuCloseBtn,
+    .mobileNavBg,
+    .mobileIcon,
+    .mobileMenuBtn {
+      display: initial;
+    }
+    .nav__wrapper {
+      nav {
+        z-index: 1002;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        transform: translateX(100%);
+        background-color: rgba(34, 11, 34, 0.95);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease transform;
+        ul {
+          width: 90%;
+          margin: 0 auto;
+          flex-direction: column;
+          li {
+            display: block;
+            margin: 0.5rem 0;
+            &:hover {
+              a {
+                background: var(--black-1);
+              }
+            }
+            a {
+              width: 100%;
+              padding: 0.5rem 1rem;
+              border-radius: 4px;
+            }
+            &.searchIcon {
+              display: none;
+            }
+          }
+        }
+        .mobileMenuCloseBtn {
+          color: crimson;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          border-color: crimson;
+          &:hover {
+            background-color: crimson;
+            color: var(--white);
+          }
+        }
+      }
+      &.open {
+        nav {
+          transform: translateX(0);
+        }
+      }
+      .mobileNavBg {
+        z-index: 1001;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.6s linear 0s;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+    .mobileIcon {
+      display: flex;
+      gap: 1rem;
+    }
+    .mobileMenuBtn {
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+  }
+`;
+
+```
+## `web/src/styles/HomePageStyles.js`
+```
+import styled from 'styled-components';
+
+export default styled.div`
+  color: red;
+`;
+
+```
+## `web/src/styles/LogoStyles.js`
+```
+import styled from 'styled-components';
+import { Link } from 'gatsby';
+
+export default styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px; 
+  height: 55px;
+  
+  /* The Squircle Shape */
+  border-radius: 32%; 
+  overflow: hidden;
+  
+  /* Visual Identity */
+  background: #000;
+  border: 1.5px solid rgba(243, 112, 33, 0.4);
+  box-shadow: 0 0 15px rgba(243, 112, 33, 0.2);
+  transition: all 0.3s ease;
+
+  /* Force the Gatsby wrapper to be exactly the parent size */
+  .gatsby-image-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Force the internal image to distort and fill */
+  img {
+    object-fit: fill !important;
+  }
+
+  &:hover {
+    transform: scale(1.08) rotate(2deg);
+    border-color: var(--primary);
+    box-shadow: 0 0 25px rgba(243, 112, 33, 0.5);
+  }
+`;
+```
+## `web/src/styles/NotFoundPageStyles.js`
+```
+import styled from 'styled-components';
+
+export const NotFoundPageStyles = styled.div`
+  text-align: center;
+  .title {
+    font-size: 5rem;
+  }
+  .link {
+    color: var(--primary);
+    text-decoration: none;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+```
+## `web/src/styles/PageHeaderStyles.js`
+```
+import styled from 'styled-components';
+
+export const PageHeaderStyles = styled.div`
+  margin: 3rem 0;
+  max-width: 400px;
+`;
+
+```
+## `web/src/styles/PageSpaceStyles.js`
+```
+import styled from 'styled-components';
+
+export const PageSpaceStyles = styled.div`
+  padding-top: ${(props) => props.top || 100}px;
+  padding-bottom: ${(props) => props.bottom || 100}px;
+`;
+
+```
+## `web/src/styles/PaginationStyles.js`
+```
+import styled from 'styled-components';
+
+export const PaginationStyles = styled.div`
+  text-align: center;
+  margin-top: 5rem;
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      background: var(--gray);
+      padding: 0.8rem;
+      border-radius: 4px;
+      svg {
+        padding: 0;
+        margin: 0;
+      }
+      &.disabled {
+        opacity: 0.2;
+        pointer-events: none;
+      }
+    }
+  }
+`;
+
+```
+## `web/src/styles/author/AuthorGridStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -61709,7 +62268,7 @@ export const AuthorGridStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\author\AuthorItemStyles.js`
+## `web/src/styles/author/AuthorItemStyles.js`
 ```
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -61729,7 +62288,7 @@ export const AuthorItemStyles = styled(Link)`
 `;
 
 ```
-## `web\src\styles\author\SingleAuthorStyles.js`
+## `web/src/styles/author/SingleAuthorStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -61758,7 +62317,7 @@ export const SingleAuthorStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\blog\BlogGridStyles.js`
+## `web/src/styles/blog/BlogGridStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -61774,7 +62333,7 @@ export const BlogGridStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\blog\BlogItemStyles.js`
+## `web/src/styles/blog/BlogItemStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -61955,7 +62514,7 @@ export const BlogItemStyles = styled.div`
   }
 `;
 ```
-## `web\src\styles\blog\SingleBlogStyles.js`
+## `web/src/styles/blog/SingleBlogStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62015,7 +62574,7 @@ export const SingleBlogStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\buttons\ActionButtonStyles.js`
+## `web/src/styles/buttons/ActionButtonStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62049,7 +62608,7 @@ export default styled.div`
 `;
 
 ```
-## `web\src\styles\buttons\ButtonStyles.js`
+## `web/src/styles/buttons/ButtonStyles.js`
 ```
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -62095,7 +62654,7 @@ export const ButtonStyles = styled(Link)`
   }
 `;
 ```
-## `web\src\styles\category\CategoryGridStyles.js`
+## `web/src/styles/category/CategoryGridStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62188,7 +62747,7 @@ export const ValueGridStyles = styled.div`
   }
 `;
 ```
-## `web\src\styles\category\CategoryItemStyles.js`
+## `web/src/styles/category/CategoryItemStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62272,7 +62831,7 @@ export const CategoryItemStyles = styled.div`
   }
 `;
 ```
-## `web\src\styles\category\PremiumCardStyles.js`
+## `web/src/styles/category/PremiumCardStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62424,7 +62983,7 @@ export const PremiumCardStyles = styled.div`
   }
 `;
 ```
-## `web\src\styles\category\SingleCategoryStyles.js`
+## `web/src/styles/category/SingleCategoryStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62470,348 +63029,7 @@ export const SingleCategoryStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\CustomImageStyles.js`
-```
-import styled from 'styled-components';
-
-export const CustomImageStyles = styled.div`
-  .custom-image {
-    max-width: 180px;
-    max-height: 180px;
-    border-radius: 10px;
-    margin: 15px;
-  }
-`;
-
-```
-## `web\src\styles\FooterStyles.js`
-```
-import styled from 'styled-components';
-
-export const FooterStyles = styled.footer`
-  padding: 5rem 0 2rem 0;
-  text-align: center;
-  background: linear-gradient(135deg, #0A0500, #000000); /* Dark orange/black gradient */
-  border-top: 1px solid rgba(243, 112, 33, 0.2);
-  .footer__text {
-    margin: 0 auto;
-    margin-top: 1rem;
-    max-width: 400px;
-  }
-  .footer__menuList {
-    margin-top: 1rem;
-    li {
-      display: inline-block;
-      margin: 0 1rem;
-      a {
-        color: var(--white-1);
-        font-size: 1.6rem;
-      }
-    }
-  }
-  .footer__socialList {
-    margin-top: 1.5rem;
-    li {
-      display: inline-block; 
-      margin: 0 0.5rem;
-      a {
-        display: inline-block;
-        width: 20px;
-        color: var(--gray);
-      }
-      :hover {
-        a {
-          color: var(--white-1);
-        }
-      }
-    }
-  }
-  .copyright {
-    margin-top: 1rem;
-    color: var(--gray);
-    font-size: 1.2rem;
-  }
-`;
-
-```
-## `web\src\styles\GlobalStyles.js`
-```
-import { createGlobalStyle } from 'styled-components';
-
-const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  :root {
-    /* Construction Theme: High-Vis Yellow & Slate */
-    --primary: #FFCC00; /* Caterpillar Yellow */
-    --secondary: #E6A800; 
-    --darkBlue: #111111; 
-    --darkPurple: #1C1C1E; 
-    --black-1: #0A0A0B; 
-    --black-2: rgba(28, 28, 30, 0.85); 
-    --white-1: #F5F5F7;
-    --gray: #8E8E93;
-    --grey: var(--gray);
-    --white: #ffffff;
-    --black: #000000;
-  }
-
-  html {
-    font-size: 10px;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    min-height: 100vh;
-    line-height: 1.5;
-    width: 100%;
-    font-family: 'Inter', sans-serif;
-    
-    /* Deep dark base with vibrant ambient glowing orbs */
-    background-color: var(--black-1);
-    /* We add a subtle dark overlay over the waves so your white text stays 100% readable */
-    background-image: linear-gradient(rgba(10, 10, 11, 0.4), rgba(10, 10, 11, 0.8)), url('/bg-waves.svg');
-    background-size: cover;
-    background-position: top center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    
-    color: var(--white);
-    overflow-x: hidden;
-  }
-
-  /* THE GHOST WATERMARK */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;  /* Giant scale */
-    height: 80vw;
-    background-image: url("/midrandrubble.jpeg"); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    
-    opacity: 0.15; 
-    
-    pointer-events: none; /* User can click through it */
-    z-index: -1; /* Sits behind everything */
-    filter: grayscale(100%) brightness(200%); /* Makes it look etched */
-  }
-
-  @media only screen and (max-width: 768px) {
-    body::before {
-      width: 150vw; /* Even larger on mobile so only part of it shows */
-      opacity: 0.04;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    color: var(--white);
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
-  }
-
-  img, svg {
-    height: 100%;
-    width: 100%;
-  }
-
-  li, ul {
-    list-style: none;
-  }
-
-  /* Professional Entrance Animations */
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Dynamic Orange Glow */
-  @keyframes glowPulse {
-    0% {
-      box-shadow: 0 0 8px rgba(243, 112, 33, 0.15), inset 0 0 0px rgba(243, 112, 33, 0);
-    }
-    50% {
-      box-shadow: 0 0 25px rgba(243, 112, 33, 0.5), inset 0 0 10px rgba(243, 112, 33, 0.2);
-    }
-    100% {
-      box-shadow: 0 0 8px rgba(243, 112, 33, 0.15), inset 0 0 0px rgba(243, 112, 33, 0);
-    }
-  }
-
-  @keyframes borderGlow {
-    0% { border-color: rgba(243, 112, 33, 0.2); }
-    50% { border-color: rgba(243, 112, 33, 0.6); }
-    100% { border-color: rgba(243, 112, 33, 0.2); }
-  }
-`;
-
-export default GlobalStyles;
-```
-## `web\src\styles\HeaderStyles.js`
-```
-import styled from 'styled-components';
-
-export default styled.header`
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  overflow: hidden;
-  padding: 1rem 0;
-  transition: background 0.3s ease-in-out;
-  .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav__wrapper {
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      li {
-        &:hover {
-          a {
-            background: #2c313e;
-          }
-        }
-        a {
-          color: var(--white-1);
-          display: inline-block;
-          text-decoration: none;
-          font-size: 1.6rem;
-          padding: 0.5rem 1rem;
-          border-radius: 6px;
-        }
-      }
-    }
-  }
-
-  .searchIcon {
-    cursor: pointer;
-    font-size: 25px;
-    .searchIcon__wrapper {
-      border-radius: 6px;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #0a2b63;
-    }
-  }
-  .mobileMenuCloseBtn,
-  .mobileNavBg,
-  .mobileIcon,
-  .mobileMenuBtn {
-    display: none;
-  }
-  @media only screen and (max-width: 768px) {
-    .mobileMenuCloseBtn,
-    .mobileNavBg,
-    .mobileIcon,
-    .mobileMenuBtn {
-      display: initial;
-    }
-    .nav__wrapper {
-      nav {
-        z-index: 1002;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        transform: translateX(100%);
-        background-color: rgba(34, 11, 34, 0.95);
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s ease transform;
-        ul {
-          width: 90%;
-          margin: 0 auto;
-          flex-direction: column;
-          li {
-            display: block;
-            margin: 0.5rem 0;
-            &:hover {
-              a {
-                background: var(--black-1);
-              }
-            }
-            a {
-              width: 100%;
-              padding: 0.5rem 1rem;
-              border-radius: 4px;
-            }
-            &.searchIcon {
-              display: none;
-            }
-          }
-        }
-        .mobileMenuCloseBtn {
-          color: crimson;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          border-color: crimson;
-          &:hover {
-            background-color: crimson;
-            color: var(--white);
-          }
-        }
-      }
-      &.open {
-        nav {
-          transform: translateX(0);
-        }
-      }
-      .mobileNavBg {
-        z-index: 1001;
-        position: fixed;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        transition: opacity 0.6s linear 0s;
-        background: rgba(0, 0, 0, 0.5);
-      }
-    }
-    .mobileIcon {
-      display: flex;
-      gap: 1rem;
-    }
-    .mobileMenuBtn {
-      svg {
-        font-size: 2.5rem;
-      }
-    }
-  }
-`;
-
-```
-## `web\src\styles\homePage\FeaturedBlogsStyles.js`
+## `web/src/styles/homePage/FeaturedBlogsStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -62826,7 +63044,7 @@ export const FeaturedBlogsStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\homePage\HeroSectionStyles.js`
+## `web/src/styles/homePage/HeroSectionStyles.js`
 ```
 import styled from "styled-components";
 
@@ -63159,7 +63377,7 @@ export const HeroSectionStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\homePage\TopCategoriesStyles.js`
+## `web/src/styles/homePage/TopCategoriesStyles.js`
 ```
 import styled, { keyframes } from 'styled-components';
 
@@ -63282,129 +63500,7 @@ export const TopCategoriesStyles = styled.div`
   }
 `;
 ```
-## `web\src\styles\HomePageStyles.js`
-```
-import styled from 'styled-components';
-
-export default styled.div`
-  color: red;
-`;
-
-```
-## `web\src\styles\LogoStyles.js`
-```
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-
-export default styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 55px; 
-  height: 55px;
-  
-  /* The Squircle Shape */
-  border-radius: 32%; 
-  overflow: hidden;
-  
-  /* Visual Identity */
-  background: #000;
-  border: 1.5px solid rgba(243, 112, 33, 0.4);
-  box-shadow: 0 0 15px rgba(243, 112, 33, 0.2);
-  transition: all 0.3s ease;
-
-  /* Force the Gatsby wrapper to be exactly the parent size */
-  .gatsby-image-wrapper {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
-  /* Force the internal image to distort and fill */
-  img {
-    object-fit: fill !important;
-  }
-
-  &:hover {
-    transform: scale(1.08) rotate(2deg);
-    border-color: var(--primary);
-    box-shadow: 0 0 25px rgba(243, 112, 33, 0.5);
-  }
-`;
-```
-## `web\src\styles\NotFoundPageStyles.js`
-```
-import styled from 'styled-components';
-
-export const NotFoundPageStyles = styled.div`
-  text-align: center;
-  .title {
-    font-size: 5rem;
-  }
-  .link {
-    color: var(--primary);
-    text-decoration: none;
-    :hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
-```
-## `web\src\styles\PageHeaderStyles.js`
-```
-import styled from 'styled-components';
-
-export const PageHeaderStyles = styled.div`
-  margin: 3rem 0;
-  max-width: 400px;
-`;
-
-```
-## `web\src\styles\PageSpaceStyles.js`
-```
-import styled from 'styled-components';
-
-export const PageSpaceStyles = styled.div`
-  padding-top: ${(props) => props.top || 100}px;
-  padding-bottom: ${(props) => props.bottom || 100}px;
-`;
-
-```
-## `web\src\styles\PaginationStyles.js`
-```
-import styled from 'styled-components';
-
-export const PaginationStyles = styled.div`
-  text-align: center;
-  margin-top: 5rem;
-  .icons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      background: var(--gray);
-      padding: 0.8rem;
-      border-radius: 4px;
-      svg {
-        padding: 0;
-        margin: 0;
-      }
-      &.disabled {
-        opacity: 0.2;
-        pointer-events: none;
-      }
-    }
-  }
-`;
-
-```
-## `web\src\styles\search\SearchFieldStyles.js`
+## `web/src/styles/search/SearchFieldStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -63445,7 +63541,7 @@ export const SearchFieldStyles = styled.label`
 `;
 
 ```
-## `web\src\styles\search\SearchModalStyles.js`
+## `web/src/styles/search/SearchModalStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -63500,7 +63596,7 @@ export const SearchModalStyles = styled.div`
 `;
 
 ```
-## `web\src\styles\search\SearchResultItemStyles.js`
+## `web/src/styles/search/SearchResultItemStyles.js`
 ```
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -63539,7 +63635,7 @@ export const SearchResultItemStyles = styled(Link)`
 `;
 
 ```
-## `web\src\styles\typography\ParagraphTextStyles.js`
+## `web/src/styles/typography/ParagraphTextStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -63554,7 +63650,7 @@ export const ParagraphTextStyles = styled.p`
 `;
 
 ```
-## `web\src\styles\typography\SectionTitleStyles.js`
+## `web/src/styles/typography/SectionTitleStyles.js`
 ```
 import styled from 'styled-components';
 
@@ -63577,7 +63673,7 @@ export const TitleStyles = styled.h2`
 `;
 
 ```
-## `web\src\templates\activity-list.js`
+## `web/src/templates/activity-list.js`
 ```
 import React from "react";
 import { graphql } from "gatsby";
@@ -63636,7 +63732,7 @@ function Activity({ data, pageContext }) {
 export default Activity;
 
 ```
-## `web\src\templates\author-list.js`
+## `web/src/templates/author-list.js`
 ```
 import { graphql } from 'gatsby';
 import React from 'react';
@@ -63694,7 +63790,7 @@ function AuthorList({ data, pageContext }) {
 export default AuthorList;
 
 ```
-## `web\src\templates\blog-list.js`
+## `web/src/templates/blog-list.js`
 ```
 import { graphql } from 'gatsby';
 import React from 'react';
@@ -63765,7 +63861,7 @@ function Blogs({ data, pageContext }) {
 export default Blogs;
 
 ```
-## `web\src\templates\category-list.js`
+## `web/src/templates/category-list.js`
 ```
 import React from 'react';
 import { graphql } from 'gatsby';
@@ -63824,7 +63920,7 @@ function Categories({ data, pageContext }) {
 export default Categories;
 
 ```
-## `web\src\templates\single-activity.js`
+## `web/src/templates/single-activity.js`
 ```
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -63886,7 +63982,7 @@ function SingleActivity({ data }) {
 
 export default SingleActivity;
 ```
-## `web\src\templates\single-author.js`
+## `web/src/templates/single-author.js`
 ```
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -63968,7 +64064,7 @@ function SingleAuthor({ data }) {
 export default SingleAuthor;
 
 ```
-## `web\src\templates\single-blog.js`
+## `web/src/templates/single-blog.js`
 ```
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -64066,7 +64162,7 @@ function SingleBlog({ data }) {
 export default SingleBlog;
 
 ```
-## `web\src\templates\single-category.js`
+## `web/src/templates/single-category.js`
 ```
 import { graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -64146,7 +64242,7 @@ function SingleCategory({ data }) {
 export default SingleCategory;
 
 ```
-## `web\src\utils\getSanityImageData.js`
+## `web/src/utils/getSanityImageData.js`
 ```
 import { getImageData } from 'gatsby-plugin-image';
 
@@ -64171,11 +64267,11 @@ export function getSanityImageData({ image, ...props }) {
 }
 
 ```
-## `web\static\bg-waves.svg`
+## `web/static/bg-waves.svg`
 
 Media file detected (.svg)
 
-## `web\static\moorosi-logo.jpg`
+## `web/static/moorosi-logo.jpg`
 
 Media file detected (.jpg)
 
