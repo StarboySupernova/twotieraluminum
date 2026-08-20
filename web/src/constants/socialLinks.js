@@ -11,40 +11,40 @@ import { IoIosMailUnread } from 'react-icons/io';
 
 export const socialLinks = [
   {
-    name: "call-sbusiso",
-    url: "tel:+27810786434",
+    name: "call-tariro",
+    url: "tel:+263719875027",
     icon: <FaPhoneSquareAlt />,
   },
   {
-    name: "call-tshiamo",
-    url: "tel:+27836512596",
+    name: "call-wendy",
+    url: "tel:+263778296767",
     icon: <FaPhoneSquareAlt />,
   },
   {
     name: "whatsapp",
-    url: `https://wa.me/27786112695?text=${encodeURIComponent(
-      "Hi Midrand Rubble Removal, I am interested in your services and I would like a quick quote",
+    url: `https://wa.me/263719875027?text=${encodeURIComponent(
+       "Hi Two Tier Aluminium Hub, I am interested in your hardware/aluminium products and would like a quote.",
     )}`,
     icon: <FaWhatsappSquare />,
   },
   {
     name: "mail",
-    url: "mailto:midrandrubbleremoval1@gmail.com",
+    url: "mailto:simbadombo@icloud.com",
     icon: <IoIosMailUnread />,
   },
   {
     name: "facebook",
-    url: "https://www.facebook.com/midrandrubble",
+    url: "https://www.facebook.com/twotieraluminum",
     icon: <FaFacebook />,
   },
   {
     name: "twitter",
-    url: "https://twitter.com/midrandrubble",
+    url: "https://twitter.com/twotieraluminum",
     icon: <FaTwitter />,
   },
   {
     name: "linkedin",
-    url: "https://www.linkedin.com/company/midrandrubble",
+    url: "https://www.linkedin.com/company/twotieraluminum",
     icon: <FaLinkedin />,
   },
 ];

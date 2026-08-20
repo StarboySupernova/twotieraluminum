@@ -12,22 +12,22 @@ import CategoryGrid from "../category/CategoryGrid";
 const initialCards = [
   {
     id: "mission",
-    title: "The Mission of Certainty",
-    text: "Our mission is the absolute eradication of chaos from your job site. We deploy rapid-response tactical units and heavy-duty transport to instantly lift the burden of waste from our clients' shoulders. We provide a project-ready environment—same hour, same day, every day.",
+    title: "Our Mission",
+    text: "To supply top-tier aluminium products and durable hardware to builders, contractors, and DIY enthusiasts, ensuring every project is built to last.",
     theme: "theme-slate",
-    icon: <FaBullseye />
+    icon: <FaBullseye />,
   },
   {
     id: "vision",
-    title: "The Vision",
-    text: "To be the undisputed sovereign of site clearing and logistical waste management in South Africa. We aim to set an uncompromising benchmark where our name is synonymous with unshakeable reliability and environmental precision.",
+    title: "Our Vision",
+    text: "To be the leading and most trusted structural hardware and aluminium hub, recognized for premium quality, endless solutions, and exceptional service.",
     theme: "theme-dark",
-    icon: <FaEye />
+    icon: <FaEye />,
   },
   {
     id: "capabilities",
-    title: "Strategic Industrial Capabilities",
-    text: "We provide the logistical muscle that keeps Gauteng’s development moving. From high-capacity NP300 fleet deployments to specialized heavy-duty manpower, our core services are engineered to handle the most demanding site clearing and debris challenges.",
+    title: "Extensive Inventory",
+    text: "From heavy-duty fasteners to custom aluminium extrusions and professional-grade tools, our catalog is engineered to handle your most demanding structural needs.",
     theme: "theme-yellow",
     icon: <FaHardHat />
   }

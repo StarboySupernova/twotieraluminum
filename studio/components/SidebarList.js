@@ -3,7 +3,7 @@ import { MdStar } from "react-icons/md";
 
 function SidebarList() {
   return S.list()
-    .title("Midrand Rubble Removal & Site Clearing")
+    .title("Two Tier Aluminium Hub")
     .items([
       S.listItem()
         .title("Spotlight")
