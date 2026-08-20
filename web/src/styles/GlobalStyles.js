@@ -8,15 +8,15 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    /* Construction Theme: High-Vis Yellow & Slate */
-    --primary: #FFCC00; /* Caterpillar Yellow */
-    --secondary: #E6A800; 
-    --darkBlue: #111111; 
+    /* Two Tier Aluminium Theme: Gold, Navy Blue, and Silver */
+    --primary: #D4AF37; /* Metallic Gold */
+    --secondary: #1F3A60; /* Navy Blue */
+    --darkBlue: #0A192F; 
     --darkPurple: #1C1C1E; 
-    --black-1: #0A0A0B; 
-    --black-2: rgba(28, 28, 30, 0.85); 
+    --black-1: #0B1120; /* Deep Navy background */
+    --black-2: rgba(11, 17, 32, 0.85); 
     --white-1: #F5F5F7;
-    --gray: #8E8E93;
+    --gray: #A0AABF; /* Silver/Slate */
     --grey: var(--gray);
     --white: #ffffff;
     --black: #000000;
@@ -55,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
     transform: translate(-50%, -50%);
     width: 80vw;  /* Giant scale */
     height: 80vw;
-    background-image: url("/midrandrubble.jpeg"); 
+    background-image: url("/twotierlogo.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;

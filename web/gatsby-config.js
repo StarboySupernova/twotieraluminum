@@ -3,9 +3,9 @@ const sanityConfig = require("./sanity-config.js");
 
 module.exports = {
   siteMetadata: {
-    title: `Midrand Rubble Removal & Site Clearing`,
-    siteUrl: `https://midrandrubble.netlify.app`, // Update when custom domain is linked
-    description: `Fast, affordable, same-day rubble removal, site clearing, and construction debris transport in Midrand, Centurion, Sandton, and Fourways.`,
+    title: `Two Tier Aluminium Hub`,
+    siteUrl: `https://twotieraluminium.netlify.app`, // Update when you have your new URL
+    description: `Quality Hardware. Endless Solutions. Supplying premium aluminium profiles, hardware, tools, and accessories.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
