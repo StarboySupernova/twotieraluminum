@@ -217,3 +217,6 @@ module.exports = {
     },
   ],
 };
+
+//sanity studio api token for the custom seeding script
+//skQR5One7RAzTiV1spBstZAKKu3lBB6dWtBYTIPtAKvQTnDLvZOLNkpkiszbkTfkL2AGYPENKzr53OyV9t2EHOguJQXFXTgHEC5y3ytMeWz4Jv8hDfslUwJPzsjfXNfhJZR1xq6SKeoMoovz4tP4vg5PYAIzSpBfszfdTx1FW2pbnUTLzL5r

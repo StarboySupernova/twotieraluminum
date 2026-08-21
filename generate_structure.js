@@ -31,6 +31,36 @@ const IGNORED_DIRS = new Set([
   ".vscode",
   ".idea",
   "xcuserdata",
+
+  // Webpack / bundler caches & build output
+  ".webpack",
+  ".cache",
+  "cache",
+  ".parcel-cache",
+  ".turbo",
+  ".swc",
+  "webpack-stats",
+
+  // Other framework build/output dirs
+  ".nuxt",
+  ".output",
+  ".svelte-kit",
+  ".angular",
+  ".docusaurus",
+  ".vercel",
+  ".netlify",
+  ".serverless",
+  ".firebase",
+  "coverage",
+  "tmp",
+  ".tmp",
+
+  // Moodle-specific generated/cache dirs
+  "moodledata",
+  "localcache",
+  "sessions",
+  "temp",
+  "trashdir",
 ]);
 
 const ALLOWED_EXT = new Set([
