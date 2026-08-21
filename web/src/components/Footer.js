@@ -10,7 +10,9 @@ function Footer() {
   return (
     <FooterStyles>
       <div className="container">
-        <Logo />
+        <div className="footer__logo-wrapper">
+          <Logo />
+        </div>
         <ParagraphText className="footer__text">
           Two Tier Aluminium Hub is your trusted partner for high-quality
           hardware and comprehensive aluminium solutions.
