@@ -5,6 +5,12 @@ export const FooterStyles = styled.footer`
   text-align: center;
   background: linear-gradient(135deg, #0A0500, #000000); /* Dark orange/black gradient */
   border-top: 1px solid rgba(243, 112, 33, 0.2);
+  .footer__logo-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem; /* Adds some nice breathing room below the logo */
+  }
   .footer__text {
     margin: 0 auto;
     margin-top: 1rem;
