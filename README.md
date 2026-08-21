@@ -1,4 +1,4 @@
-![Midrand Rubble Removal & Site Clearing](./midrandrubble.jpeg)
+![Two Tier Aluminum](./midrandrubble.jpeg)
 
 # Official web platform showcasing Tier-1 logistics, plant hire, and integrated facility management solutions. By Christian Simbarashe Dombodzvuku
 
