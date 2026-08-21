@@ -45,7 +45,7 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   return (
     <SingleBlogStyles>
-      <SEO title={`Midrand Rubble Removal & Site Clearing-${blog.title}`} />
+      <SEO title={`Two Tier Aluminum -${blog.title}`} />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <div className="blog-header">
