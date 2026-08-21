@@ -31,12 +31,15 @@ function Activity({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Core Services" />
+      <SEO
+        title="Our Services"
+        description="Explore the operational pillars and services offered by Two Tier Aluminium Hub in Mutoko, including custom sizing, bulk procurement, and retail support."
+      />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-              title="Core Services & Divisions"
-              description="Uncompromising capability. We deploy specialized fleets for abnormal loads and execute integrated facility management—from MEP, Fire Safety, and Asphalt Resurfacing, to elite Security and Hygiene services."
+            title="Our Services"
+            description="Comprehensive hardware and aluminium solutions tailored for contractors, builders, and DIY enthusiasts."
           />
           <ActivityGrid activities={activities} />
           {numberOfPages > 1 && (

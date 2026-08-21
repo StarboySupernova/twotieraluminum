@@ -31,12 +31,15 @@ function Categories({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Categories" />
+      <SEO
+        title="Product Categories"
+        description="Browse our extensive range of aluminium profiles, fasteners, power tools, and roofing materials."
+      />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-              title="Operational Sectors"
-              description="Delivering robust, scalable solutions across Mining, Construction, Heavy Plant Logistics, and Integrated Facilities Management."
+            title="Categories"
+            description="Explore our high-grade materials and structural hardware by category."
           />
           <CategoryGrid categories={categories} />
           {numberOfPages > 1 && (

@@ -32,11 +32,14 @@ function AuthorList({ data, pageContext }) {
 
   return (
     <PageSpace top={80} bottom={100}>
-      <SEO title="About Us & Our Team" />
+      <SEO
+        title="Our Experts"
+        description="Meet the dedicated hardware and logistics experts at Two Tier Aluminium Hub."
+      />
       <div className="container">
         <PageHeader
-            title="Executive Leadership"
-            description="Led by industry veterans, our team guarantees precision, safety, and scale. As a 100% Black-Owned, Level 1 B-BBEE entity, partnering with Midrand Rubble Removal & Site Clearing grants your business 135% Procurement Recognition."
+          title="Our Experts"
+          description="The professionals driving Mutoko's leading hardware and aluminium supply chain."
         />
         <AuthorGrid authors={authors} />
         {numberOfPages > 1 && (
