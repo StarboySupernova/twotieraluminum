@@ -22,4 +22,10 @@ export const SingleAuthorStyles = styled.div`
     margin: 3rem 0;
     color: var(--gray);
   }
+  .latest-posts-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-align: center;
+  }
 `;

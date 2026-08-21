@@ -1,12 +1,12 @@
 # Project Overview
 
 ## Project Summary
-- Total Files (tracked): 192
+- Total Files (tracked): 194
 
 ### Language Breakdown
-- JavaScript: 110 files (57.3%)
-- JSON: 60 files (31.3%)
-- Image: 18 files (9.4%)
+- JavaScript: 112 files (57.7%)
+- JSON: 60 files (30.9%)
+- Image: 18 files (9.3%)
 - Markdown: 2 files (1.0%)
 - SVG: 2 files (1.0%)
 
@@ -189,6 +189,7 @@
 │   │   │   │   └── 🟨 Title.js
 │   │   │   ├── 🟨 ConstrainedPortableText.js
 │   │   │   ├── 🟨 Footer.js
+│   │   │   ├── 🟨 GlobalImageCarousel.js
 │   │   │   ├── 🟨 Header.js
 │   │   │   ├── 📄⚛️ Layout.js
 │   │   │   ├── 🟨 Logo.js
@@ -246,6 +247,7 @@
 │   │   │   │   └── 🟨 SectionTitleStyles.js
 │   │   │   ├── 🟨 CustomImageStyles.js
 │   │   │   ├── 🟨 FooterStyles.js
+│   │   │   ├── 🟨 GlobalImageCarouselStyles.js
 │   │   │   ├── 🟨 GlobalStyles.js
 │   │   │   ├── 🟨 HeaderStyles.js
 │   │   │   ├── 🟨 HomePageStyles.js
@@ -66077,6 +66079,50 @@ function Footer() {
 export default Footer;
 
 ```
+## `web\src\components\GlobalImageCarousel.js`
+```
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { CarouselWrapper } from '../styles/GlobalImageCarouselStyles';
+
+function GlobalImageCarousel() {
+  const data = useStaticQuery(graphql`
+    {
+      allSanityImageAsset {
+        nodes {
+          id
+          gatsbyImageData(width: 400, placeholder: BLURRED, layout: CONSTRAINED)
+        }
+      }
+    }
+  `);
+
+  const images = data.allSanityImageAsset?.nodes || [];
+
+  // Triplicate array to create a seamless infinite scroll loop based on the -33.33% shift
+  const loopedImages = [...images, ...images, ...images];
+
+  if (images.length === 0) return null;
+
+  return (
+    <CarouselWrapper>
+      <div className="carousel-track">
+        {loopedImages.map((img, idx) => (
+          <div className="carousel-item" key={`${img.id}-${idx}`}>
+            <GatsbyImage
+              image={img.gatsbyImageData}
+              alt="Gallery Image"
+            />
+          </div>
+        ))}
+      </div>
+    </CarouselWrapper>
+  );
+}
+
+export default GlobalImageCarousel;
+```
 ## `web\src\components\Header.js`
 ```
 import React, { useContext, useEffect, useState } from 'react';
@@ -66710,21 +66756,22 @@ import 'normalize.css/normalize.css';
 import Footer from './Footer';
 import Search from './search/SearchModal';
 import { SearchModalContextProvider } from '../contexts/searchModalContext';
+import GlobalImageCarousel from './GlobalImageCarousel';
 
 function Layout({ children }) {
   return (
     <SearchModalContextProvider>
       <GlobalStyles />
-      <Search /> {/* adding it to the component tree for it to work */}
+      <Search />
       <Header />
       <main>{children}</main>
+      <GlobalImageCarousel />
       <Footer />
     </SearchModalContextProvider>
   );
 }
 
 export default Layout;
-
 ```
 ## `web\src\components\Logo.js`
 ```
@@ -67821,10 +67868,26 @@ import styled from 'styled-components';
 export const SingleBlogStyles = styled.div`
   max-width: 700px;
   margin: 0 auto;
+
   .blog-cover-image {
-    height: 300px;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3rem;
+    border-radius: 50px 0 50px 0;
+    box-shadow: 0 0 25px 5px var(--primary); /* Gold/Yellow glowing edge */
+    overflow: hidden;
+
+    /* Force aspect ratio distortion */
+    * {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    img {
+      object-fit: fill !important;
+    }
   }
+
   .title {
     margin-bottom: 1rem;
     font-size: 2.5rem;
@@ -67871,8 +67934,14 @@ export const SingleBlogStyles = styled.div`
       font-size: 2rem;
     }
   }
-`;
 
+  @media only screen and (max-width: 768px) {
+    .blog-cover-image {
+      height: 250px;
+      border-radius: 30px 0 30px 0;
+    }
+  }
+`;
 ```
 ## `web\src\styles\buttons\ActionButtonStyles.js`
 ```
@@ -68302,19 +68371,27 @@ export const SingleCategoryStyles = styled.div`
       background: linear-gradient(90deg, #0d121f, #0d121fe0 30%, #4a46eb14);
       z-index: -1;
     }
-    .coverImage {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
+  }
+
+  .coverImage {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 4rem;
+    border-radius: 0 50px 50px 0;
+    box-shadow: 0 0 25px 5px #f37021; /* Different orange glowing edge */
+    overflow: hidden;
+
+    /* Force aspect ratio distortion */
+    * {
+      width: 100% !important;
+      height: 100% !important;
     }
-    .custom-image {
-      max-width: 200px;
-      max-height: 200px;
+
+    img {
+      object-fit: fill !important;
     }
   }
+
   @media only screen and (max-width: 768px) {
     .pageHeader {
       padding: 0;
@@ -68323,11 +68400,11 @@ export const SingleCategoryStyles = styled.div`
       }
     }
     .coverImage {
-      display: none;
+      height: 250px;
+      border-radius: 0 30px 30px 0;
     }
   }
 `;
-
 ```
 ## `web\src\styles\CustomImageStyles.js`
 ```
@@ -68335,13 +68412,26 @@ import styled from 'styled-components';
 
 export const CustomImageStyles = styled.div`
   .custom-image {
-    max-width: 180px;
-    max-height: 180px;
-    border-radius: 10px;
-    margin: 15px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+
+  .custom-image [data-gatsby-image-wrapper] {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .custom-image img {
+    object-fit: contain !important;
+    width: 100% !important;
+    height: auto !important;
   }
 `;
-
 ```
 ## `web\src\styles\FooterStyles.js`
 ```
@@ -68398,6 +68488,66 @@ export const FooterStyles = styled.footer`
   }
 `;
 
+```
+## `web\src\styles\GlobalImageCarouselStyles.js`
+```
+import styled, { keyframes } from 'styled-components';
+
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33333%); }
+`;
+
+export const CarouselWrapper = styled.div`
+  width: 100%;
+  overflow: hidden;
+  background: var(--black-2);
+  padding: 3rem 0;
+  border-top: 1px solid rgba(243, 112, 33, 0.2);
+  position: relative;
+
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    animation: ${scroll} 40s linear infinite;
+    gap: 2rem;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  .carousel-item {
+    width: 300px;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 204, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+
+    * {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    img {
+      object-fit: cover !important;
+      transition: transform 0.4s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .carousel-item {
+      width: 220px;
+      height: 150px;
+    }
+  }
+`;
 ```
 ## `web\src\styles\GlobalStyles.js`
 ```
@@ -69717,7 +69867,7 @@ export const query = graphql`
     sanityActivity(id: { eq: $id }) {
       title
       _rawDescription
-      _rawBody 
+      _rawBody
       coverImage {
         asset {
           gatsbyImageData
@@ -69735,25 +69885,23 @@ function SingleActivity({ data }) {
     <PageSpace top={80} bottom={100}>
       <SingleCategoryStyles>
         <div className="container">
-          <SEO title={`Two Tier Aluminum - ${activity.title}`} /> 
+          <SEO title={`Two Tier Aluminum - ${activity.title}`} />
           
           <PageHeader title={activity.title} className="pageHeader">
-            {/* This displays the Short Description in the header area */}
             <MyPortableText value={activity._rawDescription} />
-            
-            {activity.coverImage && (
-              <GatsbyImage
-                image={activity.coverImage.asset.gatsbyImageData}
-                alt={activity.coverImage.alt || activity.title}
-                className="coverImage"
-              />
-            )}
           </PageHeader>
-
-          {/* 2. to display the Full Service Details (Body) */}
+          
+          {activity.coverImage && (
+            <GatsbyImage
+              image={activity.coverImage.asset.gatsbyImageData}
+              alt={activity.coverImage.alt || activity.title}
+              className="coverImage"
+            />
+          )}
+          
           <hr style={{ margin: '2rem 0', opacity: '0.1' }} />
           <div className="body-content">
-             <MyPortableText value={activity._rawBody} />
+            <MyPortableText value={activity._rawBody} />
           </div>
         </div>
       </SingleCategoryStyles>
@@ -69955,7 +70103,6 @@ import PageSpace from "../components/PageSpace";
 import SEO from "../components/seo";
 import { SingleCategoryStyles } from "../styles/category/SingleCategoryStyles";
 
-/// category id parameter is being dynamically accessed from context in gatsby-node
 export const query = graphql`
   query SingleCategory($id: String!) {
     sanityCategory(id: { eq: $id }) {
@@ -69968,7 +70115,9 @@ export const query = graphql`
         alt
       }
     }
-    allSanityBlog(filter: { categories: { elemMatch: { id: { eq: $id } } } }) {
+    allSanityBlog(
+      filter: { categories: { elemMatch: { id: { eq: $id } } } }
+    ) {
       nodes {
         id
         title
@@ -70002,17 +70151,19 @@ function SingleCategory({ data }) {
       <SingleCategoryStyles>
         <div className="container">
           <SEO title={`Two Tier Aluminum-${category.title}`} />
+          
           <PageHeader title={category.title} className="pageHeader">
             <MyPortableText value={category._rawDescription} />
-            {/* Add the check here */}
-            {category.coverImage && (
-              <GatsbyImage
-                image={category.coverImage.asset.gatsbyImageData}
-                alt={category.coverImage.alt || category.title}
-                className="coverImage"
-              />
-            )}
           </PageHeader>
+          
+          {category.coverImage && (
+            <GatsbyImage
+              image={category.coverImage.asset.gatsbyImageData}
+              alt={category.coverImage.alt || category.title}
+              className="coverImage"
+            />
+          )}
+          
           <BlogGrid blogs={blogs} />
         </div>
       </SingleCategoryStyles>
@@ -70021,7 +70172,6 @@ function SingleCategory({ data }) {
 }
 
 export default SingleCategory;
-
 ```
 ## `web\src\utils\getSanityImageData.js`
 ```

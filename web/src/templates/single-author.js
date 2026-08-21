@@ -48,13 +48,13 @@ export const authorQuery = graphql`
 function SingleAuthor({ data }) {
   const author = data.sanityAuthor;
   const blogs = data.allSanityBlog.nodes;
+
   return (
     <PageSpace top={80} bottom={100}>
       <SEO title={author.name} />
       <div className="container">
         <SingleAuthorStyles>
           <div className="author-header">
-            {/* Add this conditional check */}
             {author.profileImage && (
               <GatsbyImage
                 image={author.profileImage.asset.gatsbyImageData}
@@ -68,7 +68,12 @@ function SingleAuthor({ data }) {
             </div>
           </div>
           <hr className="hr" />
+          
+          {blogs && blogs.length > 0 && (
+            <Title className="latest-posts-heading">Latest posts from {author.name}</Title>
+          )}
           <BlogGrid blogs={blogs} />
+          
         </SingleAuthorStyles>
       </div>
     </PageSpace>

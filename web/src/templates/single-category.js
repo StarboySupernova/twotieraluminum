@@ -57,17 +57,19 @@ function SingleCategory({ data }) {
         <div className="container">
           <SEO title={`Two Tier Aluminum-${category.title}`} />
           
-          <PageHeader title={category.title} className="pageHeader">
-            <MyPortableText value={category._rawDescription} />
-          </PageHeader>
-          
-          {category.coverImage && (
-            <GatsbyImage
-              image={category.coverImage.asset.gatsbyImageData}
-              alt={category.coverImage.alt || category.title}
-              className="coverImage"
-            />
-          )}
+          <div className="hero-banner">
+            {category.coverImage && (
+              <GatsbyImage
+                image={category.coverImage.asset.gatsbyImageData}
+                alt={category.coverImage.alt || category.title}
+                className="coverImage"
+              />
+            )}
+            <div className="overlay"></div>
+            <PageHeader title={category.title} className="pageHeader">
+              <MyPortableText value={category._rawDescription} />
+            </PageHeader>
+          </div>
           
           <BlogGrid blogs={blogs} />
         </div>

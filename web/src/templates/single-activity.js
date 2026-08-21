@@ -32,17 +32,19 @@ function SingleActivity({ data }) {
         <div className="container">
           <SEO title={`Two Tier Aluminum - ${activity.title}`} />
           
-          <PageHeader title={activity.title} className="pageHeader">
-            <MyPortableText value={activity._rawDescription} />
-          </PageHeader>
-          
-          {activity.coverImage && (
-            <GatsbyImage
-              image={activity.coverImage.asset.gatsbyImageData}
-              alt={activity.coverImage.alt || activity.title}
-              className="coverImage"
-            />
-          )}
+          <div className="hero-banner">
+            {activity.coverImage && (
+              <GatsbyImage
+                image={activity.coverImage.asset.gatsbyImageData}
+                alt={activity.coverImage.alt || activity.title}
+                className="coverImage"
+              />
+            )}
+            <div className="overlay"></div>
+            <PageHeader title={activity.title} className="pageHeader">
+              <MyPortableText value={activity._rawDescription} />
+            </PageHeader>
+          </div>
           
           <hr style={{ margin: '2rem 0', opacity: '0.1' }} />
           <div className="body-content">
