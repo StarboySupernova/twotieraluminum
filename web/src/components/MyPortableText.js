@@ -52,7 +52,14 @@ const myPortableTextComponents = {
 };
 
 function MyPortableText({ value }) {
-  return <PortableText value={value} components={myPortableTextComponents} />;
+  return (
+    <PortableText
+      value={value}
+      components={components}
+      projectId={process.env.GATSBY_SANITY_PROJECT_ID || "lai2gfj7"}
+      dataset={process.env.GATSBY_SANITY_DATASET || "production"}
+    />
+  );
 }
 
 export default MyPortableText;
