@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import React from 'react';
-import favicon from '../images/midrandrubble.ico.jpeg'; // Imports icon
+import favicon from '../images/twotierlogo.ico.jpeg'; // Imports icon
 
 const SEO = ({ title, description }) => {
   const { site } = useStaticQuery(graphql`
