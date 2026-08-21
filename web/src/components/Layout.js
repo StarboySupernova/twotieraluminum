@@ -5,14 +5,16 @@ import 'normalize.css/normalize.css';
 import Footer from './Footer';
 import Search from './search/SearchModal';
 import { SearchModalContextProvider } from '../contexts/searchModalContext';
+import GlobalImageCarousel from './GlobalImageCarousel';
 
 function Layout({ children }) {
   return (
     <SearchModalContextProvider>
       <GlobalStyles />
-      <Search /> {/* adding it to the component tree for it to work */}
+      <Search />
       <Header />
       <main>{children}</main>
+      <GlobalImageCarousel />
       <Footer />
     </SearchModalContextProvider>
   );

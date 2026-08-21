@@ -8,7 +8,6 @@ import PageSpace from "../components/PageSpace";
 import SEO from "../components/seo";
 import { SingleCategoryStyles } from "../styles/category/SingleCategoryStyles";
 
-/// category id parameter is being dynamically accessed from context in gatsby-node
 export const query = graphql`
   query SingleCategory($id: String!) {
     sanityCategory(id: { eq: $id }) {
@@ -21,7 +20,9 @@ export const query = graphql`
         alt
       }
     }
-    allSanityBlog(filter: { categories: { elemMatch: { id: { eq: $id } } } }) {
+    allSanityBlog(
+      filter: { categories: { elemMatch: { id: { eq: $id } } } }
+    ) {
       nodes {
         id
         title
@@ -55,17 +56,19 @@ function SingleCategory({ data }) {
       <SingleCategoryStyles>
         <div className="container">
           <SEO title={`Two Tier Aluminum-${category.title}`} />
+          
           <PageHeader title={category.title} className="pageHeader">
             <MyPortableText value={category._rawDescription} />
-            {/* Add the check here */}
-            {category.coverImage && (
-              <GatsbyImage
-                image={category.coverImage.asset.gatsbyImageData}
-                alt={category.coverImage.alt || category.title}
-                className="coverImage"
-              />
-            )}
           </PageHeader>
+          
+          {category.coverImage && (
+            <GatsbyImage
+              image={category.coverImage.asset.gatsbyImageData}
+              alt={category.coverImage.alt || category.title}
+              className="coverImage"
+            />
+          )}
+          
           <BlogGrid blogs={blogs} />
         </div>
       </SingleCategoryStyles>

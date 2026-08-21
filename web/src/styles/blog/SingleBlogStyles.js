@@ -3,10 +3,26 @@ import styled from 'styled-components';
 export const SingleBlogStyles = styled.div`
   max-width: 700px;
   margin: 0 auto;
+
   .blog-cover-image {
-    height: 300px;
-    margin-bottom: 2rem;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 3rem;
+    border-radius: 50px 0 50px 0;
+    box-shadow: 0 0 25px 5px var(--primary); /* Gold/Yellow glowing edge */
+    overflow: hidden;
+
+    /* Force aspect ratio distortion */
+    * {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    img {
+      object-fit: fill !important;
+    }
   }
+
   .title {
     margin-bottom: 1rem;
     font-size: 2.5rem;
@@ -51,6 +67,13 @@ export const SingleBlogStyles = styled.div`
     .bodyCode {
       margin: 2rem 0;
       font-size: 2rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .blog-cover-image {
+      height: 250px;
+      border-radius: 30px 0 30px 0;
     }
   }
 `;
