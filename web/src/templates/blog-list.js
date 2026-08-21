@@ -43,12 +43,15 @@ function Blogs({ data, pageContext }) {
 
   return (
     <>
-      <SEO title="Posts" />
+      <SEO
+        title="Hardware & Construction Blog"
+        description="Read the latest guides, contractor tips, and DIY tutorials from Two Tier Aluminium Hub."
+      />
       <PageSpace top={80} bottom={100}>
         <div className="container">
           <PageHeader
-            title="All Posts"
-            description="A timeline of our dedication to full client satisfaction"
+            title="Our Blog"
+            description="Expert advice, product spotlights, and structural hardware guides."
           />
           <BlogGrid blogs={blogs} />
           {numberOfPages > 1 && (
