@@ -67661,8 +67661,13 @@ export const SingleAuthorStyles = styled.div`
     margin: 3rem 0;
     color: var(--gray);
   }
+  .latest-posts-heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    text-align: center;
+  }
 `;
-
 ```
 ## `web\src\styles\blog\BlogGridStyles.js`
 ```
@@ -67869,12 +67874,18 @@ export const SingleBlogStyles = styled.div`
   max-width: 700px;
   margin: 0 auto;
 
+  @keyframes goldGlowPulse {
+    0% { box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6); }
+    100% { box-shadow: 0 0 35px 8px rgba(212, 175, 55, 1); }
+  }
+
   .blog-cover-image {
     width: 100%;
     height: 400px;
     margin-bottom: 3rem;
     border-radius: 50px 0 50px 0;
-    box-shadow: 0 0 25px 5px var(--primary); /* Gold/Yellow glowing edge */
+    box-shadow: 0 0 25px 5px var(--primary);
+    animation: goldGlowPulse 2s infinite alternate;
     overflow: hidden;
 
     /* Force aspect ratio distortion */
@@ -68357,29 +68368,31 @@ export const PremiumCardStyles = styled.div`
 import styled from 'styled-components';
 
 export const SingleCategoryStyles = styled.div`
-  .pageHeader {
-    position: relative;
-    padding: 2rem 0;
-    z-index: 1;
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #0d121f, #0d121fe0 30%, #4a46eb14);
-      z-index: -1;
-    }
+  @keyframes orangeGlowPulse {
+    0% { box-shadow: 0 0 15px 2px rgba(243, 112, 33, 0.6); }
+    100% { box-shadow: 0 0 35px 8px rgba(243, 112, 33, 1); }
   }
 
-  .coverImage {
+  .hero-banner {
+    position: relative;
     width: 100%;
     height: 400px;
     margin-bottom: 4rem;
     border-radius: 0 50px 50px 0;
-    box-shadow: 0 0 25px 5px #f37021; /* Different orange glowing edge */
+    box-shadow: 0 0 25px 5px #f37021;
+    animation: orangeGlowPulse 2s infinite alternate;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .coverImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 
     /* Force aspect ratio distortion */
     * {
@@ -68392,16 +68405,34 @@ export const SingleCategoryStyles = styled.div`
     }
   }
 
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #0d121f 0%, #0d121fe0 45%, transparent 100%);
+    z-index: 1;
+  }
+
+  .pageHeader {
+    position: relative;
+    z-index: 2;
+    padding: 3rem;
+    max-width: 60%;
+  }
+
   @media only screen and (max-width: 768px) {
-    .pageHeader {
-      padding: 0;
-      &:after {
-        display: none;
-      }
-    }
-    .coverImage {
-      height: 250px;
+    .hero-banner {
+      height: 300px;
       border-radius: 0 30px 30px 0;
+    }
+    .pageHeader {
+      max-width: 100%;
+      padding: 1.5rem;
+    }
+    .overlay {
+      background: linear-gradient(90deg, #0d121f 10%, #0d121fe0 60%, transparent 100%);
     }
   }
 `;
@@ -68500,17 +68531,39 @@ const scroll = keyframes`
 
 export const CarouselWrapper = styled.div`
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   background: var(--black-2);
   padding: 3rem 0;
   border-top: 1px solid rgba(243, 112, 33, 0.2);
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--black-1);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(243, 112, 33, 0.5);
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(243, 112, 33, 0.8);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
 
   .carousel-track {
     display: flex;
     width: max-content;
     animation: ${scroll} 40s linear infinite;
     gap: 2rem;
+    padding: 0 2rem;
 
     &:hover {
       animation-play-state: paused;
@@ -69887,17 +69940,19 @@ function SingleActivity({ data }) {
         <div className="container">
           <SEO title={`Two Tier Aluminum - ${activity.title}`} />
           
-          <PageHeader title={activity.title} className="pageHeader">
-            <MyPortableText value={activity._rawDescription} />
-          </PageHeader>
-          
-          {activity.coverImage && (
-            <GatsbyImage
-              image={activity.coverImage.asset.gatsbyImageData}
-              alt={activity.coverImage.alt || activity.title}
-              className="coverImage"
-            />
-          )}
+          <div className="hero-banner">
+            {activity.coverImage && (
+              <GatsbyImage
+                image={activity.coverImage.asset.gatsbyImageData}
+                alt={activity.coverImage.alt || activity.title}
+                className="coverImage"
+              />
+            )}
+            <div className="overlay"></div>
+            <PageHeader title={activity.title} className="pageHeader">
+              <MyPortableText value={activity._rawDescription} />
+            </PageHeader>
+          </div>
           
           <hr style={{ margin: '2rem 0', opacity: '0.1' }} />
           <div className="body-content">
@@ -69963,13 +70018,13 @@ export const authorQuery = graphql`
 function SingleAuthor({ data }) {
   const author = data.sanityAuthor;
   const blogs = data.allSanityBlog.nodes;
+
   return (
     <PageSpace top={80} bottom={100}>
       <SEO title={author.name} />
       <div className="container">
         <SingleAuthorStyles>
           <div className="author-header">
-            {/* Add this conditional check */}
             {author.profileImage && (
               <GatsbyImage
                 image={author.profileImage.asset.gatsbyImageData}
@@ -69983,7 +70038,12 @@ function SingleAuthor({ data }) {
             </div>
           </div>
           <hr className="hr" />
+          
+          {blogs && blogs.length > 0 && (
+            <Title className="latest-posts-heading">Latest posts from {author.name}</Title>
+          )}
           <BlogGrid blogs={blogs} />
+          
         </SingleAuthorStyles>
       </div>
     </PageSpace>
@@ -69991,7 +70051,6 @@ function SingleAuthor({ data }) {
 }
 
 export default SingleAuthor;
-
 ```
 ## `web\src\templates\single-blog.js`
 ```
@@ -70152,17 +70211,19 @@ function SingleCategory({ data }) {
         <div className="container">
           <SEO title={`Two Tier Aluminum-${category.title}`} />
           
-          <PageHeader title={category.title} className="pageHeader">
-            <MyPortableText value={category._rawDescription} />
-          </PageHeader>
-          
-          {category.coverImage && (
-            <GatsbyImage
-              image={category.coverImage.asset.gatsbyImageData}
-              alt={category.coverImage.alt || category.title}
-              className="coverImage"
-            />
-          )}
+          <div className="hero-banner">
+            {category.coverImage && (
+              <GatsbyImage
+                image={category.coverImage.asset.gatsbyImageData}
+                alt={category.coverImage.alt || category.title}
+                className="coverImage"
+              />
+            )}
+            <div className="overlay"></div>
+            <PageHeader title={category.title} className="pageHeader">
+              <MyPortableText value={category._rawDescription} />
+            </PageHeader>
+          </div>
           
           <BlogGrid blogs={blogs} />
         </div>

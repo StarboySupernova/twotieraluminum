@@ -45,44 +45,30 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   return (
     <SingleBlogStyles>
-      <SEO title={`Two Tier Aluminum -${blog.title}`} />
+      <SEO title={`Two Tier Aluminum - ${blog.title}`} />
       <PageSpace top={80} bottom={100}>
         <div className="container">
-          <div className="blog-header">
-            {blog.coverImage && (
-              <GatsbyImage
-                image={blog.coverImage.asset.gatsbyImageData}
-                alt={blog.coverImage.alt || blog.title}
-                className="blog-cover-image"
-              />
-            )}
+          {blog.coverImage && (
+            <GatsbyImage
+              image={blog.coverImage.asset.gatsbyImageData}
+              alt={blog.coverImage.alt || blog.title}
+              className="blog-cover-image"
+            />
+          )}
+          <div className="header-content">
             <Title className="title">{blog.title}</Title>
-            <ParagraphText className="publishedAt">
-              <FiCalendar />
-              {format(new Date(blog.publishedAt), "p, MMMM dd, yyyy")}
-            </ParagraphText>
-            <ParagraphText className="categoriesText">
-              <BiCategory />
-              <span>
-                {blog.categories.map((item, index) => (
-                  <span key={item.slug.current}>
-                    <Link to={`/categories/${item.slug.current}`}>
-                      {item.title}
-                    </Link>
-                    {index < blog.categories.length - 1 ? ", " : ""}
-                  </span>
-                ))}
-              </span>
-            </ParagraphText>
-            <ParagraphText className="author">
-              <FiUser />
-              <Link to={`/team/${blog.author.slug.current}`}>
-                {blog.author.name}
-              </Link>
-            </ParagraphText>
+            <div className="meta-badges">
+              <span className="badge"><FiCalendar /> {format(new Date(blog.publishedAt), "p, MMMM dd, yyyy")}</span>
+              <span className="badge"><FiUser /> <Link to={`/team/${blog.author.slug.current}`}>{blog.author.name}</Link></span>
+              {blog.categories.map((item) => (
+                <span className="badge" key={item.slug.current}>
+                  <BiCategory /> <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
+                </span>
+              ))}
+            </div>
           </div>
-          <hr className="hr" />
-          <div className="body">
+          
+          <div className="body glass-card">
             <MyPortableText value={blog._rawBody} />
           </div>
         </div>

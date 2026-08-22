@@ -9,6 +9,7 @@ import {
   ValueSearchResultItem,
 } from "./SearchResultItem";
 import ParagraphText from "../typography/ParagraphText";
+import { Title } from "../typography/Title";
 
 function SearchResult({
   searchQuery,
@@ -19,36 +20,12 @@ function SearchResult({
   objectivesIndexStore,
   valuesIndexStore,
 }) {
-  const blogsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(blogsIndexStore.index),
-    blogsIndexStore.store,
-  );
-  const categoriesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(categoriesIndexStore.index),
-    categoriesIndexStore.store,
-  );
-  const authorsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(authorsIndexStore.index),
-    authorsIndexStore.store,
-  );
-  const activitiesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(activitiesIndexStore.index),
-    activitiesIndexStore.store,
-  );
-  const objectivesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(objectivesIndexStore.index),
-    objectivesIndexStore.store,
-  );
-  const valuesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(valuesIndexStore.index),
-    valuesIndexStore.store,
-  );
+  const blogsResult = useFlexSearch(searchQuery, JSON.stringify(blogsIndexStore.index), blogsIndexStore.store);
+  const categoriesResult = useFlexSearch(searchQuery, JSON.stringify(categoriesIndexStore.index), categoriesIndexStore.store);
+  const authorsResult = useFlexSearch(searchQuery, JSON.stringify(authorsIndexStore.index), authorsIndexStore.store);
+  const activitiesResult = useFlexSearch(searchQuery, JSON.stringify(activitiesIndexStore.index), activitiesIndexStore.store);
+  const objectivesResult = useFlexSearch(searchQuery, JSON.stringify(objectivesIndexStore.index), objectivesIndexStore.store);
+  const valuesResult = useFlexSearch(searchQuery, JSON.stringify(valuesIndexStore.index), valuesIndexStore.store);
 
   if (
     blogsResult.length === 0 &&
@@ -61,54 +38,44 @@ function SearchResult({
     return <ParagraphText>No Result Found.</ParagraphText>;
   }
 
+  const headerStyle = { fontSize: '1.6rem', marginTop: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' };
+
   return (
     <>
       {blogsResult.length > 0 && (
         <>
-          <ParagraphText>Insights & News</ParagraphText>
-          {blogsResult.map((result) => (
-            <BlogSearchResultItem key={result.id} blog={result} />
-          ))}
+          <Title style={headerStyle}>Insights & News</Title>
+          {blogsResult.map((result) => <BlogSearchResultItem key={result.id} blog={result} />)}
         </>
       )}
       {activitiesResult.length > 0 && (
         <>
-          <ParagraphText>Operational Pillars</ParagraphText>
-          {activitiesResult.map((result) => (
-            <ActivitySearchResultItem key={result.id} activity={result} />
-          ))}
+          <Title style={headerStyle}>Operational Pillars</Title>
+          {activitiesResult.map((result) => <ActivitySearchResultItem key={result.id} activity={result} />)}
         </>
       )}
       {categoriesResult.length > 0 && (
         <>
-          <ParagraphText>Sectors</ParagraphText>
-          {categoriesResult.map((result) => (
-            <CategorySearchResultItem key={result.id} category={result} />
-          ))}
+          <Title style={headerStyle}>Sectors</Title>
+          {categoriesResult.map((result) => <CategorySearchResultItem key={result.id} category={result} />)}
         </>
       )}
       {authorsResult.length > 0 && (
         <>
-          <ParagraphText>Leadership Team</ParagraphText>
-          {authorsResult.map((result) => (
-            <AuthorSearchResultItem key={result.id} author={result} />
-          ))}
+          <Title style={headerStyle}>Leadership Team</Title>
+          {authorsResult.map((result) => <AuthorSearchResultItem key={result.id} author={result} />)}
         </>
       )}
       {objectivesResult.length > 0 && (
         <>
-          <ParagraphText>Our Objectives</ParagraphText>
-          {objectivesResult.map((result) => (
-            <ObjectiveSearchResultItem key={result.id} objective={result} />
-          ))}
+          <Title style={headerStyle}>Our Objectives</Title>
+          {objectivesResult.map((result) => <ObjectiveSearchResultItem key={result.id} objective={result} />)}
         </>
       )}
       {valuesResult.length > 0 && (
         <>
-          <ParagraphText>Our Values</ParagraphText>
-          {valuesResult.map((result) => (
-            <ValueSearchResultItem key={result.id} value={result} />
-          ))}
+          <Title style={headerStyle}>Our Values</Title>
+          {valuesResult.map((result) => <ValueSearchResultItem key={result.id} value={result} />)}
         </>
       )}
     </>

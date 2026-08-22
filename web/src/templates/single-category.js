@@ -71,7 +71,9 @@ function SingleCategory({ data }) {
             </PageHeader>
           </div>
           
-          <BlogGrid blogs={blogs} />
+          <div className="content-wrapper">
+            <BlogGrid blogs={blogs} />
+          </div>
         </div>
       </SingleCategoryStyles>
     </PageSpace>

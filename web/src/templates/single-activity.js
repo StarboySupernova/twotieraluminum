@@ -47,8 +47,10 @@ function SingleActivity({ data }) {
           </div>
           
           <hr style={{ margin: '2rem 0', opacity: '0.1' }} />
-          <div className="body-content">
-            <MyPortableText value={activity._rawBody} />
+          <div className="content-wrapper">
+            <div className="body-content">
+              <MyPortableText value={activity._rawBody} />
+            </div>
           </div>
         </div>
       </SingleCategoryStyles>
