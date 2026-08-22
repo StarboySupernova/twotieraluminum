@@ -40,14 +40,12 @@ function FeaturedBlogs() {
 
   const spotlightNode = data.allSanitySpotlight.nodes[0];
   const rawBlogs = spotlightNode?.blogs || [];
-
+  
   return (
-   <FeaturedBlogsStyles>
-      <SectionTitle className="centre__text">
-        Recent Clearings & Site Updates
-      </SectionTitle>
-      <ParagraphText className="featuredBlogs__text">
-        Real-time glimpses into our recent rubble removal projects and fleet deployments across Gauteng.
+    <FeaturedBlogsStyles>
+      <SectionTitle className="centre__text">Industry Insights & Expert Guides</SectionTitle>
+      <ParagraphText className="featuredBlogs__text centre__text">
+        Stay updated with the latest trends in architectural aluminium, structural hardware, and professional DIY solutions.
       </ParagraphText>
       <BlogGrid blogs={rawBlogs} />
     </FeaturedBlogsStyles>

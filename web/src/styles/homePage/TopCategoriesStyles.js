@@ -117,4 +117,8 @@ export const TopCategoriesStyles = styled.div`
   @media only screen and (max-width: 480px) {
     .card-stack-container { height: 550px; }
   }
+
+  .centre__text {
+    text-align: center;
+  }
 `;

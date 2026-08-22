@@ -67120,6 +67120,7 @@ import {
   ValueSearchResultItem,
 } from "./SearchResultItem";
 import ParagraphText from "../typography/ParagraphText";
+import { Title } from "../typography/Title";
 
 function SearchResult({
   searchQuery,
@@ -67130,36 +67131,12 @@ function SearchResult({
   objectivesIndexStore,
   valuesIndexStore,
 }) {
-  const blogsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(blogsIndexStore.index),
-    blogsIndexStore.store,
-  );
-  const categoriesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(categoriesIndexStore.index),
-    categoriesIndexStore.store,
-  );
-  const authorsResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(authorsIndexStore.index),
-    authorsIndexStore.store,
-  );
-  const activitiesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(activitiesIndexStore.index),
-    activitiesIndexStore.store,
-  );
-  const objectivesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(objectivesIndexStore.index),
-    objectivesIndexStore.store,
-  );
-  const valuesResult = useFlexSearch(
-    searchQuery,
-    JSON.stringify(valuesIndexStore.index),
-    valuesIndexStore.store,
-  );
+  const blogsResult = useFlexSearch(searchQuery, JSON.stringify(blogsIndexStore.index), blogsIndexStore.store);
+  const categoriesResult = useFlexSearch(searchQuery, JSON.stringify(categoriesIndexStore.index), categoriesIndexStore.store);
+  const authorsResult = useFlexSearch(searchQuery, JSON.stringify(authorsIndexStore.index), authorsIndexStore.store);
+  const activitiesResult = useFlexSearch(searchQuery, JSON.stringify(activitiesIndexStore.index), activitiesIndexStore.store);
+  const objectivesResult = useFlexSearch(searchQuery, JSON.stringify(objectivesIndexStore.index), objectivesIndexStore.store);
+  const valuesResult = useFlexSearch(searchQuery, JSON.stringify(valuesIndexStore.index), valuesIndexStore.store);
 
   if (
     blogsResult.length === 0 &&
@@ -67172,54 +67149,44 @@ function SearchResult({
     return <ParagraphText>No Result Found.</ParagraphText>;
   }
 
+  const headerStyle = { fontSize: '1.6rem', marginTop: '1.5rem', marginBottom: '0.5rem', color: 'var(--primary)' };
+
   return (
     <>
       {blogsResult.length > 0 && (
         <>
-          <ParagraphText>Insights & News</ParagraphText>
-          {blogsResult.map((result) => (
-            <BlogSearchResultItem key={result.id} blog={result} />
-          ))}
+          <Title style={headerStyle}>Insights & News</Title>
+          {blogsResult.map((result) => <BlogSearchResultItem key={result.id} blog={result} />)}
         </>
       )}
       {activitiesResult.length > 0 && (
         <>
-          <ParagraphText>Operational Pillars</ParagraphText>
-          {activitiesResult.map((result) => (
-            <ActivitySearchResultItem key={result.id} activity={result} />
-          ))}
+          <Title style={headerStyle}>Operational Pillars</Title>
+          {activitiesResult.map((result) => <ActivitySearchResultItem key={result.id} activity={result} />)}
         </>
       )}
       {categoriesResult.length > 0 && (
         <>
-          <ParagraphText>Sectors</ParagraphText>
-          {categoriesResult.map((result) => (
-            <CategorySearchResultItem key={result.id} category={result} />
-          ))}
+          <Title style={headerStyle}>Sectors</Title>
+          {categoriesResult.map((result) => <CategorySearchResultItem key={result.id} category={result} />)}
         </>
       )}
       {authorsResult.length > 0 && (
         <>
-          <ParagraphText>Leadership Team</ParagraphText>
-          {authorsResult.map((result) => (
-            <AuthorSearchResultItem key={result.id} author={result} />
-          ))}
+          <Title style={headerStyle}>Leadership Team</Title>
+          {authorsResult.map((result) => <AuthorSearchResultItem key={result.id} author={result} />)}
         </>
       )}
       {objectivesResult.length > 0 && (
         <>
-          <ParagraphText>Our Objectives</ParagraphText>
-          {objectivesResult.map((result) => (
-            <ObjectiveSearchResultItem key={result.id} objective={result} />
-          ))}
+          <Title style={headerStyle}>Our Objectives</Title>
+          {objectivesResult.map((result) => <ObjectiveSearchResultItem key={result.id} objective={result} />)}
         </>
       )}
       {valuesResult.length > 0 && (
         <>
-          <ParagraphText>Our Values</ParagraphText>
-          {valuesResult.map((result) => (
-            <ValueSearchResultItem key={result.id} value={result} />
-          ))}
+          <Title style={headerStyle}>Our Values</Title>
+          {valuesResult.map((result) => <ValueSearchResultItem key={result.id} value={result} />)}
         </>
       )}
     </>
@@ -67227,7 +67194,6 @@ function SearchResult({
 }
 
 export default SearchResult;
-
 ```
 ## `web\src\components\search\SearchResultItem.js`
 ```
@@ -67640,30 +67606,58 @@ export const AuthorItemStyles = styled(Link)`
 import styled from 'styled-components';
 
 export const SingleAuthorStyles = styled.div`
+  @keyframes goldGlowPulse {
+    0% { box-shadow: 0 0 15px 2px rgba(212, 175, 55, 0.6); }
+    100% { box-shadow: 0 0 35px 8px rgba(212, 175, 55, 1); }
+  }
+
   .author-header {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 5rem 3rem 4rem 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     text-align: center;
+    margin-top: 10rem; /* Space for the floating image */
+    position: relative;
   }
+  
   .profileImage {
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
-    margin-bottom: 2rem;
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 25px 5px var(--primary);
+    animation: goldGlowPulse 2s infinite alternate;
+    border: 4px solid var(--black-1);
   }
+  
   .name {
-    margin-bottom: 1rem;
+    margin-top: 80px;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
   }
+  
   .bio {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 600px;
+    p { font-size: 1.6rem; color: rgba(255,255,255,0.8); }
   }
+  
   .hr {
-    margin: 3rem 0;
-    color: var(--gray);
+    margin: 5rem 0 3rem 0;
+    border-color: rgba(255,255,255,0.05);
   }
+  
   .latest-posts-heading {
     font-size: 2.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: var(--primary);
     text-align: center;
   }
@@ -67871,7 +67865,7 @@ export const BlogItemStyles = styled.div`
 import styled from 'styled-components';
 
 export const SingleBlogStyles = styled.div`
-  max-width: 700px;
+  max-width: 800px;
   margin: 0 auto;
 
   @keyframes goldGlowPulse {
@@ -67881,76 +67875,68 @@ export const SingleBlogStyles = styled.div`
 
   .blog-cover-image {
     width: 100%;
-    height: 400px;
-    margin-bottom: 3rem;
+    height: 450px;
+    margin-bottom: 4rem;
     border-radius: 50px 0 50px 0;
     box-shadow: 0 0 25px 5px var(--primary);
     animation: goldGlowPulse 2s infinite alternate;
     overflow: hidden;
-
-    /* Force aspect ratio distortion */
-    * {
-      width: 100% !important;
-      height: 100% !important;
-    }
-
-    img {
-      object-fit: fill !important;
-    }
+    * { width: 100% !important; height: 100% !important; }
+    img { object-fit: fill !important; }
   }
 
   .title {
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
-  .publishedAt {
-    margin-bottom: 0.5rem;
+
+  .meta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
   }
-  .categoriesText,
-  .author,
-  .publishedAt {
-    margin-bottom: 0.5rem;
+
+  .badge {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1rem;
-    svg {
-      height: 20px;
-      width: 20px;
-    }
-    a {
-      color: var(--gray);
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  .hr {
-    margin: 2rem 0;
-    color: var(--gray);
-  }
-  .body {
-    margin-top: 2rem;
-    h1,
-    h2,
-    h3,
-    h4 {
-      margin: 1rem 0;
-    }
-    .bodyImage {
-      margin: 2rem 0;
-    }
-    .bodyCode {
-      margin: 2rem 0;
-      font-size: 2rem;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.4rem;
+    color: var(--white);
+    transition: 0.3s ease;
+    
+    svg { color: var(--primary); font-size: 1.6rem; }
+    a { color: var(--white); }
+    
+    &:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-2px);
     }
   }
 
+  .glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4rem;
+    
+    h1, h2, h3, h4 { margin: 2rem 0 1rem 0; color: var(--primary); }
+    p { font-size: 1.6rem; margin-bottom: 1.5rem; line-height: 1.8; color: var(--white-1); }
+  }
+
   @media only screen and (max-width: 768px) {
-    .blog-cover-image {
-      height: 250px;
-      border-radius: 30px 0 30px 0;
-    }
+    .blog-cover-image { height: 250px; border-radius: 30px 0 30px 0; }
+    .title { font-size: 2.5rem; }
+    .glass-card { padding: 2rem; }
   }
 `;
 ```
@@ -68377,7 +68363,6 @@ export const SingleCategoryStyles = styled.div`
     position: relative;
     width: 100%;
     height: 400px;
-    margin-bottom: 4rem;
     border-radius: 0 50px 50px 0;
     box-shadow: 0 0 25px 5px #f37021;
     animation: orangeGlowPulse 2s infinite alternate;
@@ -68388,29 +68373,14 @@ export const SingleCategoryStyles = styled.div`
 
   .coverImage {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-
-    /* Force aspect ratio distortion */
-    * {
-      width: 100% !important;
-      height: 100% !important;
-    }
-
-    img {
-      object-fit: fill !important;
-    }
+    top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+    * { width: 100% !important; height: 100% !important; }
+    img { object-fit: fill !important; }
   }
 
   .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(90deg, #0d121f 0%, #0d121fe0 45%, transparent 100%);
     z-index: 1;
   }
@@ -68420,20 +68390,38 @@ export const SingleCategoryStyles = styled.div`
     z-index: 2;
     padding: 3rem;
     max-width: 60%;
+    
+    /* Overrides the new global PageHeader style specifically for the banner */
+    > div {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-align: left !important;
+      padding: 0 !important;
+    }
+  }
+
+  .content-wrapper {
+    position: relative;
+    z-index: 5;
+    margin-top: -4rem; /* Floating Overlap Effect */
+    margin-bottom: 4rem;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 4rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
   }
 
   @media only screen and (max-width: 768px) {
-    .hero-banner {
-      height: 300px;
-      border-radius: 0 30px 30px 0;
-    }
-    .pageHeader {
-      max-width: 100%;
-      padding: 1.5rem;
-    }
-    .overlay {
-      background: linear-gradient(90deg, #0d121f 10%, #0d121fe0 60%, transparent 100%);
-    }
+    .hero-banner { height: 300px; border-radius: 0 30px 30px 0; }
+    .pageHeader { max-width: 100%; padding: 1.5rem; }
+    .overlay { background: linear-gradient(90deg, #0d121f 10%, #0d121fe0 60%, transparent 100%); }
+    .content-wrapper { padding: 2rem; margin-top: -2rem; }
   }
 `;
 ```
@@ -69423,10 +69411,36 @@ export const NotFoundPageStyles = styled.div`
 import styled from 'styled-components';
 
 export const PageHeaderStyles = styled.div`
-  margin: 3rem 0;
-  max-width: 400px;
-`;
+  margin: 3rem auto 6rem auto;
+  max-width: 800px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 4rem;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 5px solid var(--primary);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 
+  h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: var(--white);
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 2.5rem;
+    h2 { font-size: 2.8rem; }
+    p { font-size: 1.4rem; }
+  }
+`;
 ```
 ## `web\src\styles\PageSpaceStyles.js`
 ```
@@ -69522,51 +69536,58 @@ export const SearchModalStyles = styled.div`
   z-index: 2000;
   min-height: 100vh;
   width: 100%;
-  background-color: #000000bd;
+  background-color: rgba(0, 0, 0, 0.85); /* Darker Overlay */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
   .modal__container {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 100px;
-    max-height: calc(100% - 150px);
+    top: 80px;
+    max-height: calc(100% - 120px);
     width: 90%;
-    max-width: 500px;
-    background-color: var(--black-1);
-    padding: 2rem;
-    border-radius: 4px;
+    max-width: 650px; /* Made wider for premium search feel */
+    background: rgba(11, 17, 32, 0.95);
+    padding: 3rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.8);
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
+    
     .close {
       position: absolute;
       transform: translateY(-100%);
-      top: -10px;
+      top: -15px;
       right: 0;
-      border-color: #1f1f47;
-      color: crimson;
+      border-color: rgba(255,255,255,0.2);
+      color: var(--white);
+      background: rgba(255,255,255,0.05);
       &:hover {
         background-color: crimson;
-        color: var(--white);
+        border-color: crimson;
       }
     }
     .search__result {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.5rem;
       width: 100%;
-
       overflow-y: auto;
+      padding-right: 10px;
+      
+      /* Beautiful Custom Scrollbar for results */
+      &::-webkit-scrollbar { width: 6px; }
+      &::-webkit-scrollbar-track { background: transparent; }
+      &::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.5); border-radius: 4px; }
     }
   }
   @media only screen and (max-width: 768px) {
-    .modal__container {
-      padding: 1rem;
-    }
+    .modal__container { padding: 2rem; }
   }
 `;
-
 ```
 ## `web\src\styles\search\SearchResultItemStyles.js`
 ```
@@ -69575,37 +69596,48 @@ import styled from 'styled-components';
 
 export const SearchResultItemStyles = styled(Link)`
   width: 100%;
-  background-color: #1c3803;
-  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
-  border-radius: 8px;
+  gap: 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  }
+
   .img {
-    width: 50px;
-    height: 40px;
-    border-radius: 4px;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
   }
+
   .title {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--white);
   }
+
   .categoriesText {
     font-size: 1.3rem;
-    a {
-      color: var(--grey);
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+    color: var(--gray);
   }
+
   .authorProfileImg {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
   }
 `;
-
 ```
 ## `web\src\styles\typography\ParagraphTextStyles.js`
 ```
@@ -69955,8 +69987,10 @@ function SingleActivity({ data }) {
           </div>
           
           <hr style={{ margin: '2rem 0', opacity: '0.1' }} />
-          <div className="body-content">
-            <MyPortableText value={activity._rawBody} />
+          <div className="content-wrapper">
+            <div className="body-content">
+              <MyPortableText value={activity._rawBody} />
+            </div>
           </div>
         </div>
       </SingleCategoryStyles>
@@ -70101,44 +70135,30 @@ function SingleBlog({ data }) {
   const blog = data.sanityBlog;
   return (
     <SingleBlogStyles>
-      <SEO title={`Two Tier Aluminum -${blog.title}`} />
+      <SEO title={`Two Tier Aluminum - ${blog.title}`} />
       <PageSpace top={80} bottom={100}>
         <div className="container">
-          <div className="blog-header">
-            {blog.coverImage && (
-              <GatsbyImage
-                image={blog.coverImage.asset.gatsbyImageData}
-                alt={blog.coverImage.alt || blog.title}
-                className="blog-cover-image"
-              />
-            )}
+          {blog.coverImage && (
+            <GatsbyImage
+              image={blog.coverImage.asset.gatsbyImageData}
+              alt={blog.coverImage.alt || blog.title}
+              className="blog-cover-image"
+            />
+          )}
+          <div className="header-content">
             <Title className="title">{blog.title}</Title>
-            <ParagraphText className="publishedAt">
-              <FiCalendar />
-              {format(new Date(blog.publishedAt), "p, MMMM dd, yyyy")}
-            </ParagraphText>
-            <ParagraphText className="categoriesText">
-              <BiCategory />
-              <span>
-                {blog.categories.map((item, index) => (
-                  <span key={item.slug.current}>
-                    <Link to={`/categories/${item.slug.current}`}>
-                      {item.title}
-                    </Link>
-                    {index < blog.categories.length - 1 ? ", " : ""}
-                  </span>
-                ))}
-              </span>
-            </ParagraphText>
-            <ParagraphText className="author">
-              <FiUser />
-              <Link to={`/team/${blog.author.slug.current}`}>
-                {blog.author.name}
-              </Link>
-            </ParagraphText>
+            <div className="meta-badges">
+              <span className="badge"><FiCalendar /> {format(new Date(blog.publishedAt), "p, MMMM dd, yyyy")}</span>
+              <span className="badge"><FiUser /> <Link to={`/team/${blog.author.slug.current}`}>{blog.author.name}</Link></span>
+              {blog.categories.map((item) => (
+                <span className="badge" key={item.slug.current}>
+                  <BiCategory /> <Link to={`/categories/${item.slug.current}`}>{item.title}</Link>
+                </span>
+              ))}
+            </div>
           </div>
-          <hr className="hr" />
-          <div className="body">
+          
+          <div className="body glass-card">
             <MyPortableText value={blog._rawBody} />
           </div>
         </div>
@@ -70148,7 +70168,6 @@ function SingleBlog({ data }) {
 }
 
 export default SingleBlog;
-
 ```
 ## `web\src\templates\single-category.js`
 ```
@@ -70225,7 +70244,9 @@ function SingleCategory({ data }) {
             </PageHeader>
           </div>
           
-          <BlogGrid blogs={blogs} />
+          <div className="content-wrapper">
+            <BlogGrid blogs={blogs} />
+          </div>
         </div>
       </SingleCategoryStyles>
     </PageSpace>

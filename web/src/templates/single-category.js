@@ -7,6 +7,7 @@ import PageHeader from "../components/PageHeader";
 import PageSpace from "../components/PageSpace";
 import SEO from "../components/seo";
 import { SingleCategoryStyles } from "../styles/category/SingleCategoryStyles";
+import { SectionTitle } from "../components/typography/Title";
 
 export const query = graphql`
   query SingleCategory($id: String!) {
@@ -72,6 +73,12 @@ function SingleCategory({ data }) {
           </div>
           
           <div className="content-wrapper">
+            {/* Added Marketing Heading */}
+            {blogs.length > 0 && (
+              <SectionTitle className="posts-heading">
+                Expert Guides & Insights
+              </SectionTitle>
+            )}
             <BlogGrid blogs={blogs} />
           </div>
         </div>

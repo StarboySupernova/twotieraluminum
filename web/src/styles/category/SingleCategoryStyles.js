@@ -64,6 +64,12 @@ export const SingleCategoryStyles = styled.div`
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
   }
 
+  .posts-heading {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary);
+  }
+
   @media only screen and (max-width: 768px) {
     .hero-banner { height: 300px; border-radius: 0 30px 30px 0; }
     .pageHeader { max-width: 100%; padding: 1.5rem; }

@@ -57,7 +57,7 @@ function BlogItem({ path, title, image, categories =[], publishedAt, prefix }) {
           <div className="icon-circle">
             <FaChevronRight />
           </div>
-          <span>View Project</span>
+          <span>Explore Guide</span>
         </div>
       </Link>
     </BlogItemStyles>
